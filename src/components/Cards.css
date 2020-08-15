@@ -1,0 +1,40 @@
+.row {
+  margin-left: 20px;
+  color: #fff;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.cards {
+  display: inline-flex;
+  padding: 50px 20px 50px 0;
+}
+
+.card__image {
+  background: #fff;
+  border-radius: 20px;
+  max-height: 300px;
+  object-fit: contain;
+  margin-right: 10px;
+  transition: transform 0.45s;
+  cursor: pointer;
+  box-shadow: 0 18px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card__image:hover,
+.card__image:focus,
+.card__image:active {
+  transform: scale(1.05);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.row {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
