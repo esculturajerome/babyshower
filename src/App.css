@@ -8,8 +8,21 @@ body {
   --primaryBackground: #f1f6fb;
   --secondaryBackground: #000;
   --primaryColor: #2c2958;
+  --secondaryColor: #8d939f;
+  --thirdColor: #b88780;
+  --white: #fff;
+  --primaryButton: linear-gradient(90deg, #ffa19e 0%, #f6c1a2 100%);
+  --primaryButtonOnHover: linear-gradient(
+    90deg,
+    rgba(255, 161, 158, 0.75) 0%,
+    rgba(246, 193, 162, 0.75) 100%
+  );
+  --primaryShadow: 0px 5px 10px rgba(203, 208, 217, 0.6), 0px 10px 20px #dbe0ea;
+  --primaryShadowColor: 0px 10px 10px rgba(251, 180, 214, 0.3),
+    0px 4px 5px rgba(250, 186, 219, 0.5);
   background: var(--primaryBackground);
-  color: var(--primaryColor);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -35,6 +48,6 @@ h2 {
 }
 
 p {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.9rem;
 }

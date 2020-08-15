@@ -4,11 +4,13 @@
   overflow-y: hidden;
   overflow-x: scroll;
   scrollbar-width: none;
+  flex: 1;
+  padding-top: 50px;
 }
 
 .cards {
-  display: inline-flex;
-  padding: 50px 20px 50px 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card__image {

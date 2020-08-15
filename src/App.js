@@ -1,12 +1,12 @@
 import React from "react";
 
 import "./App.css";
-import ListingsScreen from "./Screens/ListingsScreen";
+import WelcomeScreen from "./Screens/WelcomeScreen";
 
 function App() {
   return (
     <div className="app">
-      <ListingsScreen />
+      <WelcomeScreen />
     </div>
   );
 }
