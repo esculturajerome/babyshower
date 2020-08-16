@@ -4,6 +4,7 @@ import { useSpring, animated } from "react-spring";
 
 import CardGiftcardOutlinedIcon from "@material-ui/icons/CardGiftcardOutlined";
 import LocalShippingOutlinedIcon from "@material-ui/icons/LocalShippingOutlined";
+import { Avatar } from "@material-ui/core";
 
 function Cards() {
   const anim = useSpring({
@@ -25,11 +26,40 @@ function Cards() {
         </div>
         <div className="card__listContainer">
           <animated.div className="card__list" style={anim}>
-            <img
-              className="card__image"
-              src="https://ph-test-11.slatic.net/p/971223ef85fc52d383364bf536619167.jpg_720x720q80.jpg_.webp"
-            />
-            <img
+            <div className="card__item large">
+              <img
+                className="card__image"
+                src="https://ph-test-11.slatic.net/p/971223ef85fc52d383364bf536619167.jpg_720x720q80.jpg_.webp"
+              />
+              <Avatar
+                className="card__avatar"
+                src="https://lh3.googleusercontent.com/ogw/ADGmqu-yU1CISEmk7nwURVI6aOwT2pH637UjGaQBOlU6=s32-c-mo"
+                alt="j"
+              />
+            </div>
+            <div className="card__item large">
+              <img
+                className="card__image"
+                src="https://cf.shopee.ph/file/b26306e57538a12c1f045e19ff7426bd"
+              />
+              <Avatar
+                className="card__avatar"
+                src="https://lh3.googleusercontent.com/ogw/ADGmqu-yU1CISEmk7nwURVI6aOwT2pH637UjGaQBOlU6=s32-c-mo"
+                alt="j"
+              />
+            </div>
+            <div className="card__item large">
+              <img
+                className="card__image"
+                src="https://cf.shopee.ph/file/c182f52533b10c0ba30749a1194fd9f8"
+              />
+              <Avatar
+                className="card__avatar"
+                src="https://lh3.googleusercontent.com/ogw/ADGmqu-yU1CISEmk7nwURVI6aOwT2pH637UjGaQBOlU6=s32-c-mo"
+                alt="j"
+              />
+            </div>
+            {/* <img
               className="card__image"
               src="https://cf.shopee.ph/file/b26306e57538a12c1f045e19ff7426bd"
             />
@@ -44,7 +74,7 @@ function Cards() {
             <img
               className="card__image"
               src="https://cf.shopee.ph/file/c182f52533b10c0ba30749a1194fd9f8"
-            />
+            /> */}
           </animated.div>
           <div className="card__address">
             <p>
@@ -61,8 +91,9 @@ function Cards() {
 const CardWrapper = styled.div`
   .card {
     display: flex;
-    margin-left: 25px;
+    margin-left: 35px;
     margin-top: 25px;
+    margin-bottom: 100px;
   }
   .card__icon {
     margin-top: 25px;
@@ -78,6 +109,9 @@ const CardWrapper = styled.div`
   .card__listContainer {
     overflow-y: hidden;
     overflow-x: scroll;
+    width: fill-available;
+    width: -webkit-fill-available;
+    width: -moz-available;
   }
   .card__list {
     display: inline-flex;
@@ -86,19 +120,14 @@ const CardWrapper = styled.div`
     scrollbar-width: none;
   }
   .card__image {
-    width: 225px;
+    height: 200px;
     object-fit: contain;
     border-radius: 18px;
     margin-right: 10px;
     margin-bottom: 10px;
-    cursor: pointer;
-    transition: transform 0.45s;
   }
-  .card__image:hover {
-    transform: scale(1.05);
-  }
-  .card__image.Large {
-    width: 225px;
+  .large .card__image {
+    height: 300px;
   }
   .card__listContainer::-webkit-scrollbar {
     display: none;
@@ -112,7 +141,8 @@ const CardWrapper = styled.div`
     margin-top: 25px;
     margin-left: 10px;
     color: var(--secondaryColor);
-    position: fixed;
+    position: absolute;
+    max-width: 400px;
   }
   .card__iconLine {
     background: #e4ebf0;
@@ -122,6 +152,19 @@ const CardWrapper = styled.div`
   }
   .card__iconTruck {
     margin-bottom: -50px;
+  }
+  .card__item {
+    transition: transform 0.45s;
+  }
+  .card__item:hover {
+    transform: scale(1.05);
+  }
+  .card__avatar {
+    margin-top: -60px;
+    margin-left: 150px;
+  }
+  .large .card__avatar {
+    margin-left: 250px;
   }
 `;
 

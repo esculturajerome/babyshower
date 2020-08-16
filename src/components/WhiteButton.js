@@ -2,29 +2,28 @@ import React from "react";
 import styled from "styled-components";
 
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
-import MessageOutlinedIcon from "@material-ui/icons/MessageOutlined";
 import { Button } from "@material-ui/core";
 import { useSpring, animated } from "react-spring";
 
-function WhiteButton() {
+function WhiteButton({ Icon, title, caption }) {
   const anim = useSpring({
     from: { opacity: 0, marginRight: -100, marginLeft: 100 },
     to: { opacity: 1, marginLeft: 0, marginRight: 0 },
-    delay: 400,
+    delay: 500,
   });
   return (
     <WhiteButtonWrapper>
       <animated.div style={anim}>
         <Button className="whiteButton">
           <div className="whiteButton__icon">
-            <MessageOutlinedIcon />
+            <Icon />
           </div>
           <div className="whiteButton__content">
             <p className="whiteButton__text">
-              Daily reflection
+              {title}
               <ArrowRightAltIcon />
             </p>
-            <p className="whiteButton__caption">Personal growth</p>
+            <p className="whiteButton__caption">{caption}</p>
           </div>
         </Button>
       </animated.div>
@@ -35,7 +34,7 @@ function WhiteButton() {
 const WhiteButtonWrapper = styled.div`
   .whiteButton {
     display: flex;
-    margin: 50px 0 25px 25px;
+    margin: 0 0 25px 35px;
     justify-content: flex-start;
     width: fill-available;
     width: -webkit-fill-available;

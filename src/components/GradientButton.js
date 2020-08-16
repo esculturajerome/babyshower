@@ -3,29 +3,29 @@ import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
-import MessageOutlinedIcon from "@material-ui/icons/MessageOutlined";
+
 import { Button } from "@material-ui/core";
 
-function GradientButton() {
+function GradientButton({ Icon, title, caption, onClick }) {
   const anim = useSpring({
-    from: { opacity: 0, marginRight: -100, marginLeft: 100 },
-    to: { opacity: 1, marginLeft: 0, marginRight: 0 },
-    delay: 100,
+    from: { opacity: 0, marginLeft: 70 },
+    to: { opacity: 1, marginLeft: 35 },
+    delay: 500,
   });
 
   return (
     <GradientButtonWrapper>
       <animated.div style={anim}>
-        <Button className="gradientButton">
+        <Button className="gradientButton" onClick={onClick}>
           <div className="gradientButton__icon">
-            <MessageOutlinedIcon />
+            <Icon />
           </div>
           <div className="gradientButton__content">
             <p className="gradientButton__text">
-              Daily reflection
+              {title}
               <ArrowRightAltIcon />
             </p>
-            <p className="gradientButton__caption">Personal growth</p>
+            <p className="gradientButton__caption">{caption}</p>
           </div>
         </Button>
       </animated.div>
@@ -36,7 +36,7 @@ function GradientButton() {
 const GradientButtonWrapper = styled.div`
   .gradientButton {
     display: flex;
-    margin: 50px 0 25px 25px;
+    margin: 50px 0 25px 0;
     justify-content: flex-start;
     width: fill-available;
     width: -webkit-fill-available;
