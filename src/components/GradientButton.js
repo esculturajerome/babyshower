@@ -8,8 +8,8 @@ import { Button } from "@material-ui/core";
 
 function GradientButton({ Icon, title, caption, onClick }) {
   const anim = useSpring({
-    from: { opacity: 0, marginLeft: 70 },
-    to: { opacity: 1, marginLeft: 35 },
+    from: { opacity: 0, marginLeft: 25 },
+    to: { opacity: 1, marginLeft: 0 },
     delay: 500,
   });
 
@@ -37,6 +37,7 @@ const GradientButtonWrapper = styled.div`
   .gradientButton {
     display: flex;
     margin: 50px 0 25px 0;
+    margin-left: 0;
     justify-content: flex-start;
     width: fill-available;
     width: -webkit-fill-available;

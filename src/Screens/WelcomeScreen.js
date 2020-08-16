@@ -10,10 +10,11 @@ import Title from "../components/Title";
 import WhiteButton from "../components/WhiteButton";
 import Nav from "../components/Nav";
 import AppDetails from "../components/AppDetails";
+import { Link } from "react-router-dom";
 
 function WelcomeScreen() {
   const anim = useSpring({
-    from: { opacity: 0, marginLeft: 70 },
+    from: { opacity: 0, marginLeft: 25 },
     to: { opacity: 1, marginLeft: 0 },
   });
   return (
@@ -21,16 +22,15 @@ function WelcomeScreen() {
       <div className="welcome">
         <Nav />
         <AppDetails />
-        <GradientButton
-          Icon={MessageOutlinedIcon}
-          title="Add Message"
-          caption="Your message"
-        />
-        <WhiteButton
-          Icon={MessageOutlinedIcon}
-          title="Add Message"
-          caption="Your message"
-        />
+        <div className="welcome__buttons">
+          <Link to="/messages">
+            <GradientButton
+              Icon={MessageOutlinedIcon}
+              title="View Messages"
+              caption="Your message"
+            />
+          </Link>
+        </div>
         <Title title="Title" caption="caption" />
         <Cards />
       </div>
@@ -38,6 +38,10 @@ function WelcomeScreen() {
   );
 }
 
-const WelcomeWrapper = styled.div``;
+const WelcomeWrapper = styled.div`
+  .welcome__buttons {
+    margin-left: 35px;
+  }
+`;
 
 export default WelcomeScreen;

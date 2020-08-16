@@ -11,6 +11,7 @@ import WelcomeScreen from "./Screens/WelcomeScreen";
 import CheckoutScreen from "./Screens/CheckoutScreen";
 import Nav from "./components/Nav";
 import AppDetails from "./components/AppDetails";
+import MessagesScreen from "./Screens/MessagesScreen";
 
 function NoMatch() {
   let location = useLocation();
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route path="/checkout">
             <CheckoutScreen />
+          </Route>
+          <Route path="/messages">
+            <MessagesScreen />
           </Route>
           <Route pat="*">
             <NoMatch />

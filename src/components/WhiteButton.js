@@ -5,7 +5,7 @@ import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import { Button } from "@material-ui/core";
 import { useSpring, animated } from "react-spring";
 
-function WhiteButton({ Icon, title, caption }) {
+function WhiteButton({ Icon, title, caption, lazadaLink, shopeeLink, price }) {
   const anim = useSpring({
     from: { opacity: 0, marginRight: -100, marginLeft: 100 },
     to: { opacity: 1, marginLeft: 0, marginRight: 0 },
@@ -14,18 +14,23 @@ function WhiteButton({ Icon, title, caption }) {
   return (
     <WhiteButtonWrapper>
       <animated.div style={anim}>
-        <Button className="whiteButton">
-          <div className="whiteButton__icon">
-            <Icon />
-          </div>
+        <div className="whiteButton">
+          <div className="whiteButton__icon">{Icon && <Icon />}</div>
           <div className="whiteButton__content">
-            <p className="whiteButton__text">
-              {title}
-              <ArrowRightAltIcon />
-            </p>
+            <p className="whiteButton__text">{title}</p>
             <p className="whiteButton__caption">{caption}</p>
+            {price && (
+              <p className="whiteButton__price">Price: around P {price}.00</p>
+            )}
+            {lazadaLink && shopeeLink && (
+              <div className="whiteButton__actions">
+                <p className="whiteButton__links">Links: </p>
+                {lazadaLink && <Button onClick={lazadaLink}>Lazada</Button>}
+                {shopeeLink && <Button onClick={shopeeLink}>Shopee</Button>}
+              </div>
+            )}
           </div>
-        </Button>
+        </div>
       </animated.div>
     </WhiteButtonWrapper>
   );
@@ -34,7 +39,8 @@ function WhiteButton({ Icon, title, caption }) {
 const WhiteButtonWrapper = styled.div`
   .whiteButton {
     display: flex;
-    margin: 0 0 25px 35px;
+    margin-left: 0px;
+    margin-bottom: 25px;
     justify-content: flex-start;
     width: fill-available;
     width: -webkit-fill-available;
@@ -42,7 +48,8 @@ const WhiteButtonWrapper = styled.div`
     background: var(--white);
     box-shadow: var(--primaryShadow);
     border-radius: 15px 0 0 15px;
-    padding: 20px 25px 20px;
+    padding: 25px;
+    color: var(--secondaryColor);
   }
   .whiteButton__icon .MuiSvgIcon-root {
     color: ;
@@ -58,12 +65,31 @@ const WhiteButtonWrapper = styled.div`
     letter-spacing: -0.3px;
   }
   .whiteButton__caption {
+    margin-top: 5px;
     color: var(--secondaryColor);
     text-transform: capitalize;
   }
   .whiteButton__text .MuiSvgIcon-root {
     margin-bottom: -7px;
     margin-left: 10px;
+  }
+  .whiteButton__icon {
+    align-self: center;
+  }
+  .whiteButton__actions {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .MuiButton-label {
+    color: var(--primaryColor);
+    text-transform: capitalize;
+  }
+  .whiteButton__links {
+    margin-right: 10px;
+  }
+  .whiteButton__price {
+    margin-top: 10px;
   }
 `;
 

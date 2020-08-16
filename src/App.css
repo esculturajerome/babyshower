@@ -3,7 +3,9 @@
 * {
   margin: 0;
 }
-
+html {
+  scroll-snap-type: y mandatory;
+}
 body {
   --primaryBackground: #f1f6fb;
   --secondaryBackground: #000;
