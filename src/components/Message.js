@@ -43,7 +43,7 @@ const MessageWrapper = styled.div`
     position: relative;
     scroll-snap-align: start;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background: linear-gradient(180deg, #ffc7a6 36.46%, #fb9c9d 100%);
     display: flex;
     flex-direction: column;
