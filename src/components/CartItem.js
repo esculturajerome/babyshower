@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 import WhiteButton from "./WhiteButton";
 
-function CartItem() {
+function CartItem({ item }) {
   const image = useSpring({
     from: { opacity: 0, marginTop: 100 },
     to: { opacity: 1, marginTop: 0 },
@@ -13,18 +13,19 @@ function CartItem() {
   return (
     <CartWrapper>
       <div className="cart__item">
-        <animated.img
-          src="https://ph-test-11.slatic.net/p/971223ef85fc52d383364bf536619167.jpg_720x720q80.jpg_.webp"
-          alt=""
+        {/* <animated.img
+          src={item.imageUrl}
+          alt={item.title}
           className="cart__image"
           style={image}
-        />
+        /> */}
         <WhiteButton
-          title="Lotion"
-          caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dictum tempor massa in elementum. Phasellus semper felis ac risus gravida, eu scelerisque lorem commodo."
+          imageUrl={item.imageUrl}
+          title={item.title}
+          caption={item.caption}
           price="600"
-          lazadaLink="lazada.com"
-          shopeeLink="shopee.com"
+          lazadaUrl={item.lazadaUrl}
+          shopeeUrl={item.shopeeUrl}
         />
       </div>
     </CartWrapper>

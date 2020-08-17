@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import { Button } from "@material-ui/core";
 import { useSpring, animated } from "react-spring";
 
-function WhiteButton({ Icon, title, caption, lazadaLink, shopeeLink, price }) {
+function WhiteButton({ Icon, item, handleLink }) {
   const anim = useSpring({
     from: { opacity: 0, marginRight: -100, marginLeft: 100 },
     to: { opacity: 1, marginLeft: 0, marginRight: 0 },
@@ -17,16 +16,29 @@ function WhiteButton({ Icon, title, caption, lazadaLink, shopeeLink, price }) {
         <div className="whiteButton">
           <div className="whiteButton__icon">{Icon && <Icon />}</div>
           <div className="whiteButton__content">
-            <p className="whiteButton__text">{title}</p>
-            <p className="whiteButton__caption">{caption}</p>
-            {price && (
-              <p className="whiteButton__price">Price: around P {price}.00</p>
+            {item.imageUrl && (
+              <img src={item.imageUrl} className="whiteButton__image" />
             )}
-            {lazadaLink && shopeeLink && (
+            <p className="whiteButton__text">{item.title}</p>
+            <p className="whiteButton__caption">{item.caption}</p>
+            {item.price && (
+              <p className="whiteButton__price">
+                Price: around P {item.price}.00
+              </p>
+            )}
+            {item.lazadaUrl && item.shopeeUrl && (
               <div className="whiteButton__actions">
                 <p className="whiteButton__links">Links: </p>
-                {lazadaLink && <Button onClick={lazadaLink}>Lazada</Button>}
-                {shopeeLink && <Button onClick={shopeeLink}>Shopee</Button>}
+                {item.lazadaUrl && (
+                  <Button onClick={() => handleLink(item.lazadaUrl)}>
+                    Lazada
+                  </Button>
+                )}
+                {item.shopeeUrl && (
+                  <Button onClick={() => handleLink(item.shopeeUrl)}>
+                    Shopee
+                  </Button>
+                )}
               </div>
             )}
           </div>
@@ -46,7 +58,6 @@ const WhiteButtonWrapper = styled.div`
     width: -webkit-fill-available;
     width: -moz-available;
     background: var(--white);
-    box-shadow: var(--primaryShadow);
     border-radius: 15px 0 0 15px;
     padding: 25px;
     color: var(--secondaryColor);
@@ -90,6 +101,12 @@ const WhiteButtonWrapper = styled.div`
   }
   .whiteButton__price {
     margin-top: 10px;
+  }
+  .whiteButton__image {
+    object-fit: contain;
+    border-radius: 18px;
+    height: 200px;
+    margin-bottom: 10px;
   }
 `;
 

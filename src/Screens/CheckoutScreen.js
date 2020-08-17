@@ -16,7 +16,7 @@ function CheckoutScreen() {
       <Nav back />
       <AppDetails />
       <CartLists />
-      <Cards />
+      {/* <Cards /> */}
       {/* {checkout && <GradientButton onClick={handle} />} */}
       {/* {!checkout && <WhiteButton />} */}
     </div>

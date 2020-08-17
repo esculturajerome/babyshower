@@ -11,7 +11,6 @@ function MessagesScreen() {
   const back = useSpring({
     from: { opacity: 0, marginLeft: 25 },
     to: { opacity: 1, marginLeft: 0 },
-    delay: 500,
   });
 
   const [show, setshow] = useState(false);
@@ -62,7 +61,7 @@ const MessagesWrapper = styled.div`
     scrollbar-width: none; /* Firefox */
   }
   .messages__back {
-    position: absolute;
+    position: fixed;
     top: 50px;
     left: 35px;
     z-index: 1;

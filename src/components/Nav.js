@@ -5,9 +5,12 @@ import styled from "styled-components";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import { Avatar, IconButton } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { useStateValue } from "../utils/StateProvider";
 
 function Nav({ back }) {
   const [hour, sethour] = useState(null);
+
+  const [{ userInfo }] = useStateValue();
 
   useEffect(() => {
     getHour();
@@ -41,10 +44,7 @@ function Nav({ back }) {
                 </IconButton>
               </Link>
             ) : (
-              <Avatar
-                src="https://lh3.googleusercontent.com/ogw/ADGmqu-yU1CISEmk7nwURVI6aOwT2pH637UjGaQBOlU6=s32-c-mo"
-                alt="jerome"
-              />
+              <Avatar src={userInfo?.photoUrl} alt={userInfo?.displayName} />
             )}
           </animated.div>
           <animated.div className="header__greeting" style={text}>
@@ -52,7 +52,7 @@ function Nav({ back }) {
               Good {hour < 12 ? "Morning" : hour < 18 ? "Afternoon" : "Evening"}
               ,
             </p>
-            <p className="header__name">Jerome</p>
+            <p className="header__name">{userInfo?.displayName}</p>
           </animated.div>
         </div>
       </header>

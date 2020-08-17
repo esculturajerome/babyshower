@@ -7,9 +7,10 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import { IconButton } from "@material-ui/core";
 import { useSpring, animated } from "react-spring";
 import { Link } from "react-router-dom";
+import { useStateValue } from "../utils/StateProvider";
 
 function AppDetails() {
-  const [giftCount, setgiftCount] = useState(2);
+  const [{ cart }] = useStateValue();
   const [messagesCount, setmessagesCount] = useState(0);
 
   const textAnim = useSpring({
@@ -29,10 +30,10 @@ function AppDetails() {
             </div>
           </IconButton>
         </div>
-        <div className={`appDetails__detail, ${giftCount && "colored"}`}>
+        <div className={`appDetails__detail, ${cart && "colored"}`}>
           <Link to="/checkout">
             <IconButton>
-              <p className="appDetails__count">{giftCount}</p>
+              <p className="appDetails__count">{cart.length}</p>
               <div className="appDetails__icon">
                 <ShoppingCartOutlinedIcon />
                 <p className="appDetails__title">Gifts</p>
