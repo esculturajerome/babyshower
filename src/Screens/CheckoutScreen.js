@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+
 import Cards from "../components/Cards";
 import AppDetails from "../components/AppDetails";
 import Nav from "../components/Nav";
@@ -14,15 +16,23 @@ function CheckoutScreen() {
   };
 
   return (
-    <div>
-      <Nav back />
-      {cart.length !== 0 && <AppDetails />}
-      <CartLists />
-      {/* <Cards /> */}
-      {/* {checkout && <GradientButton onClick={handle} />} */}
-      {/* {!checkout && <WhiteButton />} */}
-    </div>
+    <CheckoutWrapper>
+      <div className="checkout">
+        <Nav back />
+        {cart.length !== 0 && <AppDetails />}
+        <CartLists />
+        {/* <Cards /> */}
+        {/* {checkout && <GradientButton onClick={handle} />} */}
+        {/* {!checkout && <WhiteButton />} */}
+      </div>
+    </CheckoutWrapper>
   );
 }
+
+const CheckoutWrapper = styled.div`
+  .checkout {
+    margin: 75px 0 75px 35px;
+  }
+`;
 
 export default CheckoutScreen;

@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import CardGiftcardOutlinedIcon from "@material-ui/icons/CardGiftcardOutlined";
-import MessageOutlinedIcon from "@material-ui/icons/MessageOutlined";
-import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import { IconButton } from "@material-ui/core";
 import { useSpring, animated } from "react-spring";
 import { Link } from "react-router-dom";
@@ -26,7 +23,6 @@ function AppDetails() {
           <IconButton>
             <p className="appDetails__count">{messagesCount}</p>
             <div className="appDetails__icon">
-              <MessageOutlinedIcon />
               <p className="appDetails__title">Messages</p>
             </div>
           </IconButton>
@@ -36,7 +32,6 @@ function AppDetails() {
             <IconButton>
               <p className="appDetails__count">{cart.length}</p>
               <div className="appDetails__icon">
-                <ShoppingCartOutlinedIcon />
                 <p className="appDetails__title">Gifts</p>
               </div>
             </IconButton>
@@ -50,8 +45,7 @@ function AppDetails() {
 const AppDetailsWrapper = styled.div`
   .appDetails {
     display: flex;
-    justify-content: space-between;
-    margin: 25px 0;
+    margin-left: -10px;
   }
   .appDetails__detail {
     display: flex;
@@ -59,7 +53,7 @@ const AppDetailsWrapper = styled.div`
     color: var(--secondaryColor);
   }
   .appDetails__count {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-right: 10px;
   }
   .appDetails__detail.colored {

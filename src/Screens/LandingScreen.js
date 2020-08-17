@@ -8,24 +8,32 @@ import Title from "../components/Title";
 import GradientButton from "../components/GradientButton";
 
 import MessageOutlinedIcon from "@material-ui/icons/MessageOutlined";
+import LocalShippingOutlinedIcon from "@material-ui/icons/LocalShippingOutlined";
+
 import CardGiftcardOutlinedIcon from "@material-ui/icons/CardGiftcardOutlined";
 import Logout from "../components/Logout";
 import { useStateValue } from "../utils/StateProvider";
+import IconText from "../components/IconText";
 
 function LandingScreen() {
-  const [{ userInfo }] = useStateValue();
+  const [{ userInfo, gifts }] = useStateValue();
   return (
     <LandingWrapper>
       <div className="landing">
         <Nav />
 
-        {/* <AppDetails /> */}
+        <AppDetails />
         <Title
           title="Lorem ipsum dolor sit amet, consectetur adipiscing"
           caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis. Integer lacus libero, elementum id urna ut, euismod gravida arcu. "
         />
-        <Cards />
-        <GradientButton
+        {gifts && <Cards Icon={CardGiftcardOutlinedIcon} gifts={gifts} />}
+        <IconText
+          Icon={LocalShippingOutlinedIcon}
+          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum."
+        />
+        {/* <Cards /> */}
+        {/* <GradientButton
           Icon={MessageOutlinedIcon}
           title="Send us a message"
           caption="Any tips and hacks as a parents"
@@ -34,7 +42,7 @@ function LandingScreen() {
           Icon={CardGiftcardOutlinedIcon}
           title="Send us a Gift"
           caption="Any tips and hacks as a parents"
-        />
+        /> */}
         {userInfo && <Logout />}
       </div>
     </LandingWrapper>

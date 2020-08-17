@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import MessageOutlinedIcon from "@material-ui/icons/MessageOutlined";
 import CardGiftcardOutlinedIcon from "@material-ui/icons/CardGiftcardOutlined";
+import LocalShippingOutlinedIcon from "@material-ui/icons/LocalShippingOutlined";
 
 import GradientButton from "../components/GradientButton";
 import Cards from "../components/Cards";
@@ -13,21 +14,19 @@ import AppDetails from "../components/AppDetails";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../utils/StateProvider";
 import { IconButton } from "@material-ui/core";
-import Logout from "../components/Logout";
+import IconText from "../components/IconText";
 
 function WelcomeScreen() {
-  const [{ userInfo }] = useStateValue();
-
   return (
     <WelcomeWrapper>
       <div className="welcome">
         <Nav />
-        {userInfo && <AppDetails />}
         <Title
           title="Lorem ipsum dolor sit amet"
           caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis. Integer lacus libero, elementum id urna ut, euismod gravida arcu. "
         />
-        <Cards />
+
+        {/* {messages && <Cards Icon={MessageOutlinedIcon} messages={messages} />} */}
         <div className="welcome__buttons">
           <Link to="/message">
             <GradientButton
@@ -43,7 +42,6 @@ function WelcomeScreen() {
           />
         </div>
       </div>
-      {userInfo && <Logout />}
     </WelcomeWrapper>
   );
 }

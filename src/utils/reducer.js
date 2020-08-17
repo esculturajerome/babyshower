@@ -1,7 +1,29 @@
 // initialState
 export const initialState = {
   userInfo: null,
-  cards: null,
+  gifts: [
+    {
+      id: 1,
+      imageUrl:
+        "https://ph-test-11.slatic.net/p/971223ef85fc52d383364bf536619167.jpg_720x720q80.jpg_.webp",
+    },
+    {
+      id: 2,
+      imageUrl:
+        "https://ph-test-11.slatic.net/p/971223ef85fc52d383364bf536619167.jpg_720x720q80.jpg_.webp",
+    },
+    {
+      id: 3,
+      imageUrl: "https://cf.shopee.ph/file/b26306e57538a12c1f045e19ff7426bd",
+    },
+  ],
+  messages: [
+    {
+      id: 1,
+      message:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis. Integer lacus libero, elementum id urna ut, euismod gravida arcu. Suspendisse malesuada tempus tortor, at venenatis nulla sagittis vel. Suspendisse posuere, risus a dignissim suscipit, mi quam sollicitudin diam.",
+    },
+  ],
   cart: [
     {
       id: 1,
@@ -39,6 +61,12 @@ function reducer(state, action) {
       // Logic for adding item to cart
       return {
         ...state,
+        userInfo: action.item,
+      };
+      break;
+    case "USER_LOGOUT":
+      // Logic for adding item to cart
+      return {
         userInfo: action.item,
       };
       break;
