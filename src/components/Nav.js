@@ -10,7 +10,7 @@ import { useStateValue } from "../utils/StateProvider";
 function Nav({ back }) {
   const [hour, sethour] = useState(null);
 
-  const [{ userInfo }] = useStateValue();
+  const [{ userInfo }, dispatch] = useStateValue();
 
   useEffect(() => {
     getHour();
@@ -32,27 +32,47 @@ function Nav({ back }) {
     to: { marginLeft: 0 },
   });
 
+  const handleLogin = () => {
+    dispatch({
+      type: "USER_SIGNIN",
+      item: {
+        uid: "1",
+        displayName: "Jerome",
+        photoUrl:
+          "https://lh3.googleusercontent.com/ogw/ADGmqu-yU1CISEmk7nwURVI6aOwT2pH637UjGaQBOlU6=s32-c-mo",
+      },
+    });
+  };
+
   return (
     <NavWrapper>
       <header className="header">
         <div className="header__nav">
-          <animated.div className="header__avatar" style={arrow}>
-            {back ? (
-              <Link to="/">
-                <IconButton>
-                  <ArrowRightAltIcon className="header__back" />
-                </IconButton>
-              </Link>
-            ) : (
-              <Avatar src={userInfo?.photoUrl} alt={userInfo?.displayName} />
-            )}
-          </animated.div>
+          {userInfo && (
+            <animated.div className="header__avatar" style={arrow}>
+              {back ? (
+                <Link to="/">
+                  <IconButton>
+                    <ArrowRightAltIcon className="header__back" />
+                  </IconButton>
+                </Link>
+              ) : (
+                <Avatar src={userInfo?.photoUrl} alt={userInfo?.displayName} />
+              )}
+            </animated.div>
+          )}
           <animated.div className="header__greeting" style={text}>
             <p className="header__greet">
               Good {hour < 12 ? "Morning" : hour < 18 ? "Afternoon" : "Evening"}
-              ,
+              {userInfo && ","}
             </p>
-            <p className="header__name">{userInfo?.displayName}</p>
+            {userInfo ? (
+              <p className="header__name">{userInfo?.displayName}</p>
+            ) : (
+              <IconButton onClick={handleLogin}>
+                <p>Login</p>
+              </IconButton>
+            )}
           </animated.div>
         </div>
       </header>
@@ -81,6 +101,12 @@ const NavWrapper = styled.div`
   }
   .header__back {
     transform: rotate(180deg);
+  }
+  .MuiIconButton-root {
+    border-radius: 15px;
+    text-align: left;
+    color: inherit;
+    margin-left: -10px;
   }
 `;
 

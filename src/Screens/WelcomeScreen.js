@@ -11,8 +11,12 @@ import WhiteButton from "../components/WhiteButton";
 import Nav from "../components/Nav";
 import AppDetails from "../components/AppDetails";
 import { Link } from "react-router-dom";
+import { useStateValue } from "../utils/StateProvider";
+import { IconButton } from "@material-ui/core";
+import Logout from "../components/Logout";
 
 function WelcomeScreen() {
+  const [{ userInfo }] = useStateValue();
   const anim = useSpring({
     from: { opacity: 0, marginLeft: 25 },
     to: { opacity: 1, marginLeft: 0 },
@@ -21,7 +25,9 @@ function WelcomeScreen() {
     <WelcomeWrapper>
       <div className="welcome">
         <Nav />
-        <AppDetails />
+        {userInfo && <AppDetails />}
+        <Title title="Title" caption="caption" />
+        <Cards />
         <div className="welcome__buttons">
           <Link to="/messages">
             <GradientButton
@@ -31,9 +37,8 @@ function WelcomeScreen() {
             />
           </Link>
         </div>
-        <Title title="Title" caption="caption" />
-        <Cards />
       </div>
+      {userInfo && <Logout />}
     </WelcomeWrapper>
   );
 }
@@ -41,6 +46,15 @@ function WelcomeScreen() {
 const WelcomeWrapper = styled.div`
   .welcome__buttons {
     margin-left: 35px;
+  }
+  .welcome__logout {
+    margin-left: 35px;
+  }
+
+  .welcome__logout.MuiIconButton-root {
+    margin-top: 100px;
+    border-radius: 15px;
+    text-align: left;
   }
 `;
 

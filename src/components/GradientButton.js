@@ -36,7 +36,7 @@ function GradientButton({ Icon, title, caption, onClick }) {
 const GradientButtonWrapper = styled.div`
   .gradientButton {
     display: flex;
-    margin: 50px 0 25px 0;
+    margin: 100px 0 25px 0;
     margin-left: 0;
     justify-content: flex-start;
     width: fill-available;

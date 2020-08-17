@@ -18,6 +18,7 @@ function AppDetails() {
     to: { opacity: 1, marginBottom: 25, marginTop: 25 },
     delay: 200,
   });
+
   return (
     <AppDetailsWrapper>
       <animated.div className="appDetails" style={textAnim}>
@@ -30,7 +31,7 @@ function AppDetails() {
             </div>
           </IconButton>
         </div>
-        <div className={`appDetails__detail, ${cart && "colored"}`}>
+        <div className={`appDetails__detail ${cart.length !== 0 && "colored"}`}>
           <Link to="/checkout">
             <IconButton>
               <p className="appDetails__count">{cart.length}</p>

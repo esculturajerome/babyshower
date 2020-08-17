@@ -1,10 +1,6 @@
 // initialState
 export const initialState = {
-  userInfo: {
-    displayName: "Jerome",
-    photoUrl:
-      "https://lh3.googleusercontent.com/ogw/ADGmqu-yU1CISEmk7nwURVI6aOwT2pH637UjGaQBOlU6=s32-c-mo",
-  },
+  userInfo: null,
   cart: [
     {
       id: 1,
