@@ -13,7 +13,6 @@ import AppDetails from "../components/AppDetails";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../utils/StateProvider";
 import { IconButton } from "@material-ui/core";
-import IconText from "../components/IconText";
 
 function WelcomeScreen() {
   return (
