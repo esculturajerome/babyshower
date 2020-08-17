@@ -84,7 +84,6 @@ const NavWrapper = styled.div`
   .header__nav {
     display: flex;
     align-items: center;
-    margin: 75px 0 25px 35px;
   }
   .header__avatar {
     margin-right: 10px;
@@ -105,7 +104,7 @@ const NavWrapper = styled.div`
   .MuiIconButton-root {
     border-radius: 15px;
     text-align: left;
-    color: inherit;
+    color: var(--secondaryColor);
     margin-left: -10px;
   }
 `;

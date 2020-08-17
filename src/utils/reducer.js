@@ -1,6 +1,7 @@
 // initialState
 export const initialState = {
   userInfo: null,
+  cards: null,
   cart: [
     {
       id: 1,
@@ -15,17 +16,6 @@ export const initialState = {
     },
     {
       id: 2,
-      caption:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dictum tempor massa in elementum. Phasellus semper felis ac risus gravida, eu scelerisque lorem commodo.",
-      imageUrl:
-        "https://ph-test-11.slatic.net/p/971223ef85fc52d383364bf536619167.jpg_720x720q80.jpg_.webp",
-      title: "Title",
-      shopeeUrl: "https://shopee.com/",
-      lazadaUrl: "https://www.lazada.com.ph/",
-      price: 100,
-    },
-    {
-      id: 3,
       caption:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dictum tempor massa in elementum. Phasellus semper felis ac risus gravida, eu scelerisque lorem commodo.",
       imageUrl:

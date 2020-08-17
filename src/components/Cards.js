@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 
 import CardGiftcardOutlinedIcon from "@material-ui/icons/CardGiftcardOutlined";
 import LocalShippingOutlinedIcon from "@material-ui/icons/LocalShippingOutlined";
 import { Avatar } from "@material-ui/core";
+import { useStateValue } from "../utils/StateProvider";
 
 function Cards() {
+  const [{ cards }] = useStateValue();
+
   const anim = useSpring({
     from: { marginRight: -100, marginLeft: 100 },
     to: { marginLeft: 0, marginRight: 0 },
@@ -59,22 +62,6 @@ function Cards() {
                 alt="j"
               />
             </div>
-            {/* <img
-              className="card__image"
-              src="https://cf.shopee.ph/file/b26306e57538a12c1f045e19ff7426bd"
-            />
-            <img
-              className="card__image"
-              src="https://cf.shopee.ph/file/c182f52533b10c0ba30749a1194fd9f8"
-            />
-            <img
-              className="card__image"
-              src="https://cf.shopee.ph/file/b26306e57538a12c1f045e19ff7426bd"
-            />
-            <img
-              className="card__image"
-              src="https://cf.shopee.ph/file/c182f52533b10c0ba30749a1194fd9f8"
-            /> */}
           </animated.div>
           <div className="card__address">
             <p>
@@ -91,7 +78,6 @@ function Cards() {
 const CardWrapper = styled.div`
   .card {
     display: flex;
-    margin-left: 35px;
     margin-top: 25px;
     margin-bottom: 100px;
   }
@@ -142,7 +128,7 @@ const CardWrapper = styled.div`
     margin-left: 10px;
     color: var(--secondaryColor);
     position: absolute;
-    max-width: 400px;
+    max-width: 360px;
   }
   .card__iconLine {
     background: #e4ebf0;

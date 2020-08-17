@@ -6,15 +6,7 @@ import { useStateValue } from "../utils/StateProvider";
 function Logout() {
   const [dispatch] = useStateValue();
   const handleLogut = () => {
-    dispatch({
-      type: "USER_SIGNIN",
-      item: {
-        uid: "1",
-        displayName: "Jerome",
-        photoUrl:
-          "https://lh3.googleusercontent.com/ogw/ADGmqu-yU1CISEmk7nwURVI6aOwT2pH637UjGaQBOlU6=s32-c-mo",
-      },
-    });
+    alert("logout!");
   };
   return (
     <LogoutWrapper>
@@ -33,10 +25,8 @@ function Logout() {
 }
 
 const LogoutWrapper = styled.div`
-  .logout {
-    margin-left: 35px;
-  }
   .logout__text {
+    margin-right: 25px;
     padding-top: 100px;
     color: var(--secondaryColor);
   }

@@ -20,15 +20,16 @@ function Title({ title, caption }) {
 
 const TitleWrapper = styled.div`
   .title {
-    margin: 75px 0 25px 35px;
+    margin-bottom: 25px;
   }
   .title__text {
+    margin-bottom: 1rem;
     font-size: 1rem;
     color: var(--primaryColor);
     text-transform: uppercase;
   }
-
   .title__caption {
+    margin-right: 25px;
     font-size: 0.8rem;
     color: var(--secondaryColor);
   }

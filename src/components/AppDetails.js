@@ -51,7 +51,7 @@ const AppDetailsWrapper = styled.div`
   .appDetails {
     display: flex;
     justify-content: space-between;
-    margin: 25px 35px 25px 35px;
+    margin: 25px 0;
   }
   .appDetails__detail {
     display: flex;

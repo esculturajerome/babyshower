@@ -9,9 +9,9 @@ import {
 import "./App.css";
 import WelcomeScreen from "./Screens/WelcomeScreen";
 import CheckoutScreen from "./Screens/CheckoutScreen";
-import Nav from "./components/Nav";
-import AppDetails from "./components/AppDetails";
-import MessagesScreen from "./Screens/MessagesScreen";
+import StoriesScreen from "./Screens/StoriesScreen";
+import { useStateValue } from "./utils/StateProvider";
+import LandingScreen from "./Screens/LandingScreen";
 
 function NoMatch() {
   let location = useLocation();
@@ -26,18 +26,21 @@ function NoMatch() {
 }
 
 function App() {
+  const [{ userInfo }] = useStateValue();
+
+  console.log(userInfo, "userInfo");
   return (
     <div className="app">
       <Router>
         <Switch>
           <Route exact path="/">
-            <WelcomeScreen />
+            {userInfo ? <LandingScreen /> : <WelcomeScreen />}
           </Route>
           <Route path="/checkout">
             <CheckoutScreen />
           </Route>
-          <Route path="/messages">
-            <MessagesScreen />
+          <Route path="/message">
+            <StoriesScreen />
           </Route>
           <Route pat="*">
             <NoMatch />
