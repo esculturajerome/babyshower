@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import MessageOutlinedIcon from "@material-ui/icons/MessageOutlined";
 import CardGiftcardOutlinedIcon from "@material-ui/icons/CardGiftcardOutlined";
-import LocalShippingOutlinedIcon from "@material-ui/icons/LocalShippingOutlined";
 
 import GradientButton from "../components/GradientButton";
 import Cards from "../components/Cards";
