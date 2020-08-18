@@ -14,6 +14,7 @@ import CardGiftcardOutlinedIcon from "@material-ui/icons/CardGiftcardOutlined";
 import Logout from "../components/Logout";
 import { useStateValue } from "../utils/StateProvider";
 import IconText from "../components/IconText";
+import CopyAddress from "../components/CopyAddress";
 
 function LandingScreen() {
   const [{ userInfo, gifts }] = useStateValue();
@@ -21,7 +22,6 @@ function LandingScreen() {
     <LandingWrapper>
       <div className="landing">
         <Nav />
-
         <AppDetails />
         <Title
           title="Lorem ipsum dolor sit amet, consectetur adipiscing"
@@ -32,6 +32,8 @@ function LandingScreen() {
           Icon={LocalShippingOutlinedIcon}
           text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum."
         />
+        <CopyAddress />
+
         {/* <Cards /> */}
         {/* <GradientButton
           Icon={MessageOutlinedIcon}

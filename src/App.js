@@ -12,6 +12,8 @@ import CheckoutScreen from "./Screens/CheckoutScreen";
 import StoriesScreen from "./Screens/StoriesScreen";
 import { useStateValue } from "./utils/StateProvider";
 import LandingScreen from "./Screens/LandingScreen";
+import MessagesScreen from "./Screens/MessagesScreen";
+import Nav from "./components/Nav";
 
 function NoMatch() {
   let location = useLocation();
@@ -34,13 +36,22 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            {userInfo ? <LandingScreen /> : <WelcomeScreen />}
+            {userInfo ? (
+              <React.Fragment>
+                <LandingScreen />
+              </React.Fragment>
+            ) : (
+              <WelcomeScreen />
+            )}
           </Route>
           <Route path="/checkout">
             <CheckoutScreen />
           </Route>
           <Route path="/message">
             <StoriesScreen />
+          </Route>
+          <Route path="/messages">
+            <MessagesScreen />
           </Route>
           <Route pat="*">
             <NoMatch />

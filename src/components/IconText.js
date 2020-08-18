@@ -6,7 +6,7 @@ function IconText({ Icon, text }) {
   const textAnim = useSpring({
     from: { opacity: 0, marginTop: 50 },
     to: { opacity: 1, marginTop: 25 },
-    delay: 500,
+    delay: 200,
   });
   return (
     <IconTextWrapper>
@@ -23,7 +23,8 @@ const IconTextWrapper = styled.div`
     display: flex;
     align-items: center;
     color: var(--secondaryColor);
-    margin: 25px 0;
+    margin-top: 25px;
+    margin-bottom: 10px;
   }
   .iconText__text {
     margin-left: 35px;

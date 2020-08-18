@@ -63,3 +63,8 @@ a {
   max-width: 500px;
   margin: 0 auto;
 }
+
+.MuiIconButton-root {
+  border-radius: 15px !important;
+  color: var(--primaryColor) !important;
+}

@@ -64,7 +64,7 @@ const GradientButtonWrapper = styled.div`
   }
   .gradientButton__caption {
     color: #fff;
-    text-transform: capitalize;
+    text-transform: initial;
   }
   .gradientButton__text .MuiSvgIcon-root {
     margin-bottom: -7px;

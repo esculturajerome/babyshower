@@ -6,15 +6,18 @@ export const initialState = {
       id: 1,
       imageUrl:
         "https://ph-test-11.slatic.net/p/971223ef85fc52d383364bf536619167.jpg_720x720q80.jpg_.webp",
+      uid: "111",
     },
     {
       id: 2,
       imageUrl:
         "https://ph-test-11.slatic.net/p/971223ef85fc52d383364bf536619167.jpg_720x720q80.jpg_.webp",
+      uid: "111",
     },
     {
       id: 3,
       imageUrl: "https://cf.shopee.ph/file/b26306e57538a12c1f045e19ff7426bd",
+      uid: "111",
     },
   ],
   messages: [
@@ -22,6 +25,13 @@ export const initialState = {
       id: 1,
       message:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis. Integer lacus libero, elementum id urna ut, euismod gravida arcu. Suspendisse malesuada tempus tortor, at venenatis nulla sagittis vel. Suspendisse posuere, risus a dignissim suscipit, mi quam sollicitudin diam.",
+      uid: "111",
+    },
+    {
+      id: 1,
+      message:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis. Integer lacus libero, elementum id urna ut, euismod gravida arcu. Suspendisse malesuada tempus tortor, at venenatis nulla sagittis vel. Suspendisse posuere, risus a dignissim suscipit, mi quam sollicitudin diam.",
+      uid: "111",
     },
   ],
   cart: [
@@ -35,6 +45,7 @@ export const initialState = {
       shopeeUrl: "https://shopee.com/",
       lazadaUrl: "https://www.lazada.com.ph/",
       price: 100,
+      uid: "1121",
     },
     {
       id: 2,
@@ -46,6 +57,7 @@ export const initialState = {
       shopeeUrl: "https://shopee.com/",
       lazadaUrl: "https://www.lazada.com.ph/",
       price: 100,
+      uid: "1211",
     },
   ],
 };

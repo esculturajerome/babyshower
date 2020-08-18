@@ -7,8 +7,7 @@ import { Link } from "react-router-dom";
 import { useStateValue } from "../utils/StateProvider";
 
 function AppDetails() {
-  const [{ cart }] = useStateValue();
-  const [messagesCount, setmessagesCount] = useState(0);
+  const [{ cart, messages, userInfo }] = useStateValue();
 
   const textAnim = useSpring({
     from: { opacity: 0, marginBottom: -50, marginTop: 50 },
@@ -16,21 +15,31 @@ function AppDetails() {
     delay: 200,
   });
 
+  console.log(messages, "UID");
+
   return (
     <AppDetailsWrapper>
       <animated.div className="appDetails" style={textAnim}>
-        <div className={`appDetails__detail ${messagesCount && "colored"}`}>
-          <IconButton>
-            <p className="appDetails__count">{messagesCount}</p>
-            <div className="appDetails__icon">
-              <p className="appDetails__title">Messages</p>
-            </div>
-          </IconButton>
+        <div
+          className={`appDetails__detail ${
+            messages?.length !== 0 && "colored"
+          }`}
+        >
+          <Link to="/messages">
+            <IconButton>
+              <p className="appDetails__count">{messages.length}</p>
+              <div className="appDetails__icon">
+                <p className="appDetails__title">Messages</p>
+              </div>
+            </IconButton>
+          </Link>
         </div>
-        <div className={`appDetails__detail ${cart.length !== 0 && "colored"}`}>
+        <div
+          className={`appDetails__detail ${cart?.length !== 0 && "colored"}`}
+        >
           <Link to="/checkout">
             <IconButton>
-              <p className="appDetails__count">{cart.length}</p>
+              <p className="appDetails__count">{cart?.length}</p>
               <div className="appDetails__icon">
                 <p className="appDetails__title">Gifts</p>
               </div>
@@ -58,11 +67,6 @@ const AppDetailsWrapper = styled.div`
   }
   .appDetails__detail.colored {
     color: var(--primaryColor);
-  }
-  .MuiIconButton-root {
-    border-radius: 15px;
-    text-align: left;
-    color: inherit;
   }
 `;
 

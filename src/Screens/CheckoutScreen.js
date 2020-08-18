@@ -6,21 +6,65 @@ import AppDetails from "../components/AppDetails";
 import Nav from "../components/Nav";
 import CartLists from "../components/CartLists";
 import { useStateValue } from "../utils/StateProvider";
+import { getCartTotal } from "../utils/reducer";
+
+import Title from "../components/Title";
+import EmptyCart from "../components/EmptyCart";
+import PopupModal from "../components/PopupModal";
 
 function CheckoutScreen() {
-  const [checkout, setcheckout] = useState(true);
-  const [{ cart }] = useStateValue();
+  const [{ userInfo, cart }, dispatch] = useStateValue();
 
-  const handle = () => {
-    setTimeout(() => setcheckout(!checkout), 700);
+  const [open, setOpen] = useState(false);
+
+  const handleRemoveFromCart = (id) => {
+    dispatch({
+      type: "REMOVE_FROM_CART",
+      id: id,
+    });
+    setOpen(false);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleLink = (e) => {
+    window.open(e, "_blank");
   };
 
   return (
     <CheckoutWrapper>
       <div className="checkout">
         <Nav back />
-        {cart.length !== 0 && <AppDetails />}
-        <CartLists />
+        <AppDetails />
+        <React.Fragment>
+          {cart.length !== 0 ? (
+            <Title title={`P ${getCartTotal(cart)}`} caption="Total Amount" />
+          ) : (
+            <EmptyCart />
+          )}
+          {cart.map((item) => (
+            <React.Fragment>
+              {/* modal */}
+              <PopupModal
+                open={open}
+                onClick={() => handleRemoveFromCart(item.id)}
+                handleClose={handleClose}
+                title="Remove Item?"
+                caption="Are you really sure?"
+                buttonCaption="Delete"
+              />
+              <CartLists
+                handleRemoveFromCart={() => setOpen(true)}
+                lazadaUrl={() => handleLink(item.lazadaUrl)}
+                shopeeUrl={() => handleLink(item.shopeeUrl)}
+                item={item}
+              />
+            </React.Fragment>
+          ))}
+        </React.Fragment>
+
         {/* <Cards /> */}
         {/* {checkout && <GradientButton onClick={handle} />} */}
         {/* {!checkout && <WhiteButton />} */}

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import MessageOutlinedIcon from "@material-ui/icons/MessageOutlined";
 import CardGiftcardOutlinedIcon from "@material-ui/icons/CardGiftcardOutlined";
@@ -13,6 +14,7 @@ import AppDetails from "../components/AppDetails";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../utils/StateProvider";
 import { IconButton } from "@material-ui/core";
+import IconText from "../components/IconText";
 
 function WelcomeScreen() {
   return (

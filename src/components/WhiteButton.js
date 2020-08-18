@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Button } from "@material-ui/core";
 import { useSpring, animated } from "react-spring";
 
-function WhiteButton({ Icon, item, handleLink }) {
+function WhiteButton({ Icon, item, lazadaUrl, shopeeUrl }) {
   const anim = useSpring({
     from: { opacity: 0, marginRight: -100, marginLeft: 100 },
     to: { opacity: 1, marginLeft: 0, marginRight: 0 },
@@ -29,16 +29,8 @@ function WhiteButton({ Icon, item, handleLink }) {
             {item.lazadaUrl && item.shopeeUrl && (
               <div className="whiteButton__actions">
                 <p className="whiteButton__links">Links: </p>
-                {item.lazadaUrl && (
-                  <Button onClick={() => handleLink(item.lazadaUrl)}>
-                    Lazada
-                  </Button>
-                )}
-                {item.shopeeUrl && (
-                  <Button onClick={() => handleLink(item.shopeeUrl)}>
-                    Shopee
-                  </Button>
-                )}
+                {item.lazadaUrl && <Button onClick={lazadaUrl}>Lazada</Button>}
+                {item.shopeeUrl && <Button onClick={shopeeUrl}>Shopee</Button>}
               </div>
             )}
           </div>

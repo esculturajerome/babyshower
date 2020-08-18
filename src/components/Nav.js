@@ -40,6 +40,7 @@ function Nav({ back }) {
         displayName: "Jerome",
         photoUrl:
           "https://lh3.googleusercontent.com/ogw/ADGmqu-yU1CISEmk7nwURVI6aOwT2pH637UjGaQBOlU6=s32-c-mo",
+        uid: "111",
       },
     });
   };
@@ -100,12 +101,6 @@ const NavWrapper = styled.div`
   }
   .header__back {
     transform: rotate(180deg);
-  }
-  .MuiIconButton-root {
-    border-radius: 15px;
-    text-align: left;
-    color: var(--secondaryColor);
-    margin-left: -10px;
   }
 `;
 

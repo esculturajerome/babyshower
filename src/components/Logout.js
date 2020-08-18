@@ -36,9 +36,5 @@ const LogoutWrapper = styled.div`
   .logout__btn {
     margin-left: 50px;
   }
-  .MuiIconButton-root {
-    border-radius: 15px;
-    text-align: left;
-  }
 `;
 export default Logout;

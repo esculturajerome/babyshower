@@ -30,7 +30,6 @@ const TitleWrapper = styled.div`
   }
   .title__caption {
     margin-right: 25px;
-    font-size: 0.8rem;
     color: var(--secondaryColor);
   }
 `;
