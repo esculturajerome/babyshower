@@ -13,7 +13,7 @@ import EmptyCart from "../components/EmptyCart";
 import PopupModal from "../components/PopupModal";
 
 function CheckoutScreen() {
-  const [{ userInfo, cart }, dispatch] = useStateValue();
+  const [{ userInfo, carts }, dispatch] = useStateValue();
 
   const [open, setOpen] = useState(false);
 
@@ -39,12 +39,12 @@ function CheckoutScreen() {
         <Nav back />
         <AppDetails />
         <React.Fragment>
-          {cart.length !== 0 ? (
-            <Title title={`P ${getCartTotal(cart)}`} caption="Total Amount" />
+          {carts.length !== 0 ? (
+            <Title title={`P ${getCartTotal(carts)}`} caption="Total Amount" />
           ) : (
             <EmptyCart />
           )}
-          {cart.map((item) => (
+          {carts.map((item) => (
             <React.Fragment>
               {/* modal */}
               <PopupModal

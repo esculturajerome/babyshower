@@ -6,25 +6,15 @@ import ArrowRightAltOutlinedIcon from "@material-ui/icons/ArrowRightAltOutlined"
 import { IconButton } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { animated, useSpring } from "react-spring";
+import { useStateValue } from "../utils/StateProvider";
 
 function StoriesScreen() {
+  const [{ messages }] = useStateValue();
+
   const back = useSpring({
     from: { opacity: 0, marginLeft: 25 },
     to: { opacity: 1, marginLeft: 0 },
   });
-
-  const [show, setshow] = useState(false);
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     if (window.scrollY > 100) {
-  //       setshow(true);
-  //     } else setshow(false);
-  //   });
-  //   return () => {
-  //     window.removeEventListener("scroll");
-  //   };
-  // }, []);
 
   return (
     <MessagesWrapper>
@@ -36,11 +26,19 @@ function StoriesScreen() {
             </IconButton>
           </Link>
         </animated.div>
-        <div className="messagesList__message">
-          <Message />
-          <Message />
-          <Message />
-        </div>
+        {messages ? (
+          <div className="messagesList__message">
+            {messages.map((message) => (
+              <Message
+                message={message.message}
+                name={message?.displayName}
+                photo={message?.photoUrl}
+              />
+            ))}
+          </div>
+        ) : (
+          <Message message="No Message yet" noArrow />
+        )}
       </div>
     </MessagesWrapper>
   );

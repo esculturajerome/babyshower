@@ -36,11 +36,10 @@ function Nav({ back }) {
     dispatch({
       type: "USER_SIGNIN",
       item: {
-        uid: "1",
+        uid: "111",
         displayName: "Jerome",
         photoUrl:
           "https://lh3.googleusercontent.com/ogw/ADGmqu-yU1CISEmk7nwURVI6aOwT2pH637UjGaQBOlU6=s32-c-mo",
-        uid: "111",
       },
     });
   };

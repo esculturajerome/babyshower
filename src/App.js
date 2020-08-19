@@ -14,18 +14,8 @@ import { useStateValue } from "./utils/StateProvider";
 import LandingScreen from "./Screens/LandingScreen";
 import MessagesScreen from "./Screens/MessagesScreen";
 import Nav from "./components/Nav";
-
-function NoMatch() {
-  let location = useLocation();
-
-  return (
-    <div>
-      <h3>
-        No match for <code>{location.pathname}</code>
-      </h3>
-    </div>
-  );
-}
+import NoMatch from "./Screens/NoMatch";
+import GiftsScreen from "./Screens/GiftsScreen";
 
 function App() {
   const [{ userInfo }] = useStateValue();
@@ -51,7 +41,13 @@ function App() {
             <StoriesScreen />
           </Route>
           <Route path="/messages">
-            <MessagesScreen />
+            <StoriesScreen />
+          </Route>
+          <Route path="/gifts">
+            <GiftsScreen />
+          </Route>
+          <Route path="/story/:id">
+            <StoriesScreen />
           </Route>
           <Route pat="*">
             <NoMatch />

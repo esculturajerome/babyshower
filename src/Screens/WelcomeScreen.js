@@ -1,26 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import MessageOutlinedIcon from "@material-ui/icons/MessageOutlined";
 import CardGiftcardOutlinedIcon from "@material-ui/icons/CardGiftcardOutlined";
 
 import GradientButton from "../components/GradientButton";
-import Cards from "../components/Cards";
 import Title from "../components/Title";
-import WhiteButton from "../components/WhiteButton";
 import Nav from "../components/Nav";
-import AppDetails from "../components/AppDetails";
 import { Link } from "react-router-dom";
-import { useStateValue } from "../utils/StateProvider";
-import { IconButton } from "@material-ui/core";
-import IconText from "../components/IconText";
+import StoryRow from "../components/StoryRow";
 
 function WelcomeScreen() {
   return (
     <WelcomeWrapper>
       <div className="welcome">
         <Nav />
+        <StoryRow />
         <Title
           title="Lorem ipsum dolor sit amet"
           caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis. Integer lacus libero, elementum id urna ut, euismod gravida arcu. "
@@ -48,7 +43,7 @@ function WelcomeScreen() {
 
 const WelcomeWrapper = styled.div`
   .welcome {
-    margin: 75px 0 75px 35px;
+    padding: 75px 0 75px 35px;
   }
 
   .welcome__logout.MuiIconButton-root {

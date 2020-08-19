@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import { IconButton } from "@material-ui/core";
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useStateValue } from "../utils/StateProvider";
 
 function AppDetails() {
-  const [{ cart, messages, userInfo }] = useStateValue();
+  const [{ carts, messages, gifts }] = useStateValue();
 
   const textAnim = useSpring({
     from: { opacity: 0, marginBottom: -50, marginTop: 50 },
@@ -35,13 +35,25 @@ function AppDetails() {
           </Link>
         </div>
         <div
-          className={`appDetails__detail ${cart?.length !== 0 && "colored"}`}
+          className={`appDetails__detail ${gifts?.length !== 0 && "colored"}`}
+        >
+          <Link to="/gifts">
+            <IconButton>
+              <p className="appDetails__count">{gifts?.length}</p>
+              <div className="appDetails__icon">
+                <p className="appDetails__title">Gifts</p>
+              </div>
+            </IconButton>
+          </Link>
+        </div>
+        <div
+          className={`appDetails__detail ${carts?.length !== 0 && "colored"}`}
         >
           <Link to="/checkout">
             <IconButton>
-              <p className="appDetails__count">{cart?.length}</p>
+              <p className="appDetails__count">{carts?.length}</p>
               <div className="appDetails__icon">
-                <p className="appDetails__title">Gifts</p>
+                <p className="appDetails__title">Carts</p>
               </div>
             </IconButton>
           </Link>
@@ -65,7 +77,10 @@ const AppDetailsWrapper = styled.div`
     font-size: 1rem;
     margin-right: 10px;
   }
-  .appDetails__detail.colored {
+  .MuiIconButton-label {
+    color: var(--secondaryColor);
+  }
+  .colored .MuiIconButton-label {
     color: var(--primaryColor);
   }
 `;

@@ -27,12 +27,16 @@ function LandingScreen() {
           title="Lorem ipsum dolor sit amet, consectetur adipiscing"
           caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis. Integer lacus libero, elementum id urna ut, euismod gravida arcu. "
         />
-        {gifts && <Cards Icon={CardGiftcardOutlinedIcon} gifts={gifts} />}
-        <IconText
-          Icon={LocalShippingOutlinedIcon}
-          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum."
-        />
-        <CopyAddress />
+        {gifts && (
+          <React.Fragment>
+            <Cards Icon={CardGiftcardOutlinedIcon} gifts={gifts} />
+            <IconText
+              Icon={LocalShippingOutlinedIcon}
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum."
+            />
+            <CopyAddress />
+          </React.Fragment>
+        )}
 
         {/* <Cards /> */}
         {/* <GradientButton

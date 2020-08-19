@@ -6,7 +6,7 @@ export const initialState = {
       id: 1,
       imageUrl:
         "https://ph-test-11.slatic.net/p/971223ef85fc52d383364bf536619167.jpg_720x720q80.jpg_.webp",
-      uid: "111",
+      uid: "222",
     },
     {
       id: 2,
@@ -24,17 +24,21 @@ export const initialState = {
     {
       id: 1,
       message:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis. Integer lacus libero, elementum id urna ut, euismod gravida arcu. Suspendisse malesuada tempus tortor, at venenatis nulla sagittis vel. Suspendisse posuere, risus a dignissim suscipit, mi quam sollicitudin diam.",
+        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page",
       uid: "111",
+      photoUrl:
+        "https://lh3.googleusercontent.com/ogw/ADGmqu-yU1CISEmk7nwURVI6aOwT2pH637UjGaQBOlU6=s32-c-mo",
     },
     {
-      id: 1,
+      id: 2,
       message:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis. Integer lacus libero, elementum id urna ut, euismod gravida arcu. Suspendisse malesuada tempus tortor, at venenatis nulla sagittis vel. Suspendisse posuere, risus a dignissim suscipit, mi quam sollicitudin diam.",
-      uid: "111",
+      uid: "1121",
+      photoUrl:
+        "https://lh3.googleusercontent.com/ogw/ADGmqu-yU1CISEmk7nwURVI6aOwT2pH637UjGaQBOlU6=s32-c-mo",
     },
   ],
-  cart: [
+  carts: [
     {
       id: 1,
       caption:
@@ -62,8 +66,8 @@ export const initialState = {
   ],
 };
 
-export const getCartTotal = (cart) =>
-  cart?.reduce((amount, item) => item.price + amount, 0);
+export const getCartTotal = (carts) =>
+  carts?.reduce((amount, item) => item.price + amount, 0);
 
 //Reducer
 function reducer(state, action) {
@@ -86,14 +90,14 @@ function reducer(state, action) {
       // Logic for adding item to cart
       return {
         ...state,
-        cart: [...state.cart, action.item],
+        carts: [...state.carts, action.item],
       };
       break;
     case "REMOVE_FROM_CART":
       // Logic for Removing item from Cart
-      let newCart = [...state.cart];
+      let newCart = [...state.carts];
 
-      const index = state.cart.findIndex(
+      const index = state.carts.findIndex(
         (cartItem) => cartItem.id === action.id
       );
 
@@ -104,7 +108,7 @@ function reducer(state, action) {
         console.warn(`Can't remove product (id: ${action.id}`);
       }
 
-      return { ...state, cart: newCart };
+      return { ...state, carts: newCart };
       break;
     default:
       return state;
