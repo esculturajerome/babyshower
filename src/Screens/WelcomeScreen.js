@@ -23,18 +23,29 @@ function WelcomeScreen() {
 
         {/* {messages && <Cards Icon={MessageOutlinedIcon} messages={messages} />} */}
         <div className="welcome__buttons">
-          <Link to="/message">
+          <div className="welcome__btn">
+            <Link to="/message">
+              <GradientButton
+                Icon={MessageOutlinedIcon}
+                title="Send us a message"
+                caption="Any tips and hacks as a parents"
+              />
+            </Link>
+          </div>
+          <div className="welcome__btn">
             <GradientButton
-              Icon={MessageOutlinedIcon}
-              title="Send us a message"
+              Icon={CardGiftcardOutlinedIcon}
+              title="Send us a Gift"
               caption="Any tips and hacks as a parents"
             />
-          </Link>
-          <GradientButton
-            Icon={CardGiftcardOutlinedIcon}
-            title="Send us a Gift"
-            caption="Any tips and hacks as a parents"
-          />
+          </div>
+          <div className="welcome__btn">
+            <GradientButton
+              Icon={CardGiftcardOutlinedIcon}
+              title="Send us a Gift"
+              caption="Any tips and hacks as a parents"
+            />
+          </div>
         </div>
       </div>
     </WelcomeWrapper>
@@ -44,12 +55,19 @@ function WelcomeScreen() {
 const WelcomeWrapper = styled.div`
   .welcome {
     padding: 75px 0 75px 35px;
+    position: relative;
+    height: 100vh;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
   }
 
   .welcome__logout.MuiIconButton-root {
     margin-top: 100px;
     border-radius: 15px;
     text-align: left;
+  }
+  .welcome__buttons > .welcome__btn {
+    // scroll-snap-align: start;
   }
 `;
 

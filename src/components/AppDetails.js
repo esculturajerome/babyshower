@@ -29,7 +29,7 @@ function AppDetails() {
             <IconButton>
               <p className="appDetails__count">{messages.length}</p>
               <div className="appDetails__icon">
-                <p className="appDetails__title">Messages</p>
+                <p className="appDetails__title">Your Messages</p>
               </div>
             </IconButton>
           </Link>
@@ -41,7 +41,7 @@ function AppDetails() {
             <IconButton>
               <p className="appDetails__count">{gifts?.length}</p>
               <div className="appDetails__icon">
-                <p className="appDetails__title">Gifts</p>
+                <p className="appDetails__title">Your Gifts</p>
               </div>
             </IconButton>
           </Link>
@@ -66,7 +66,6 @@ function AppDetails() {
 const AppDetailsWrapper = styled.div`
   .appDetails {
     display: flex;
-    margin-left: -10px;
   }
   .appDetails__detail {
     display: flex;
@@ -80,8 +79,15 @@ const AppDetailsWrapper = styled.div`
   .MuiIconButton-label {
     color: var(--secondaryColor);
   }
+  .MuiIconButton-root {
+    background-color: #f1faf7;
+    box-shadow: 0px 5px 10px #e4e9ec;
+    margin-right: 5px;
+  }
   .colored .MuiIconButton-label {
-    color: var(--primaryColor);
+    background: -webkit-linear-gradient(90deg, #3f9da7 2.32%, #67dda0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 `;
 

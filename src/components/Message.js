@@ -40,7 +40,7 @@ const MessageWrapper = styled.div`
     width: 100%;
     background: linear-gradient(180deg, #ffc7a6 36.46%, #fb9c9d 100%);
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     text-align: center;
   }
   .message__container {

@@ -84,10 +84,6 @@ const WhiteButtonWrapper = styled.div`
     display: flex;
     align-items: center;
   }
-  .MuiButton-label {
-    color: var(--primaryColor);
-    text-transform: capitalize;
-  }
   .whiteButton__links {
     margin-right: 10px;
   }

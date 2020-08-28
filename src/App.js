@@ -16,6 +16,7 @@ import MessagesScreen from "./Screens/MessagesScreen";
 import Nav from "./components/Nav";
 import NoMatch from "./Screens/NoMatch";
 import GiftsScreen from "./Screens/GiftsScreen";
+import ListGifts from "./Screens/ListGifts";
 
 function App() {
   const [{ userInfo }] = useStateValue();
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/checkout">
             <CheckoutScreen />
+          </Route>
+          <Route path="/listofgifts">
+            <ListGifts />
           </Route>
           <Route path="/message">
             <StoriesScreen />

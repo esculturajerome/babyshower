@@ -25,6 +25,16 @@ const CopyWrapper = styled.div`
   .copy {
     margin-left: 50px;
   }
+  .MuiIconButton-root {
+    background-color: #f1faf7;
+    box-shadow: 0px 5px 10px #e4e9ec;
+    margin-right: 5px;
+  }
+  .MuiIconButton-label {
+    background: -webkit-linear-gradient(90deg, #3f9da7 2.32%, #67dda0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 `;
 
 export default CopyAddress;
