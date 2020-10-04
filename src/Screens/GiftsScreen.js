@@ -10,24 +10,32 @@ import LocalShippingOutlinedIcon from "@material-ui/icons/LocalShippingOutlined"
 import CardGiftcardOutlinedIcon from "@material-ui/icons/CardGiftcardOutlined";
 import Nav from "../components/Nav";
 import AppDetails from "../components/AppDetails";
+import Title from "../components/Title";
 
 function GiftsScreen() {
   const [{ userInfo, gifts }] = useStateValue();
+
+  console.log(gifts, "gifts");
 
   return (
     <GiftScreenWrapper>
       <div className="giftScreen">
         <Nav back />
-        <AppDetails />
+        {/* <AppDetails /> */}
+        <Title
+          title="Lorem ipsum dolor sit amet, consectetur adipiscing"
+          caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis. Integer lacus libero, elementum id urna ut, euismod gravida arcu. "
+        />
         {gifts && (
           <React.Fragment>
-            <Cards Icon={CardGiftcardOutlinedIcon} gifts={gifts} />
-            <IconText
-              Icon={LocalShippingOutlinedIcon}
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum."
-            />
+            <Cards imageUrl={require("../images/gcash.png")} />
+            <Cards imageUrl={require("../images/bpi.png")} />
           </React.Fragment>
         )}
+        <IconText
+          Icon={LocalShippingOutlinedIcon}
+          text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum."
+        />
       </div>
     </GiftScreenWrapper>
   );

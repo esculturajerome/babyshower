@@ -4,14 +4,12 @@ export const initialState = {
   gifts: [
     {
       id: 1,
-      imageUrl:
-        "https://ph-test-11.slatic.net/p/971223ef85fc52d383364bf536619167.jpg_720x720q80.jpg_.webp",
+      imageUrl: "/images/bpi.png",
       uid: "222",
     },
     {
       id: 2,
-      imageUrl:
-        "https://ph-test-11.slatic.net/p/971223ef85fc52d383364bf536619167.jpg_720x720q80.jpg_.webp",
+      imageUrl: "/images/gcash.png",
       uid: "111",
     },
     {

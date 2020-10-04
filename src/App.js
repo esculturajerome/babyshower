@@ -19,23 +19,15 @@ import GiftsScreen from "./Screens/GiftsScreen";
 import ListGifts from "./Screens/ListGifts";
 
 function App() {
-  const [{ userInfo }] = useStateValue();
-
-  console.log(userInfo, "userInfo");
   return (
     <div className="app">
       <Router>
         <Switch>
           <Route exact path="/">
-            {userInfo ? (
-              <React.Fragment>
-                <LandingScreen />
-              </React.Fragment>
-            ) : (
-              <WelcomeScreen />
-            )}
+            {/* <WelcomeScreen /> */}
+            <LandingScreen />
           </Route>
-          <Route path="/checkout">
+          <Route path="/moneygift">
             <CheckoutScreen />
           </Route>
           <Route path="/listofgifts">

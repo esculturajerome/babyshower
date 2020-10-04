@@ -21,43 +21,28 @@ function AppDetails() {
     <AppDetailsWrapper>
       <animated.div className="appDetails" style={textAnim}>
         <div
-          className={`appDetails__detail ${
-            messages?.length !== 0 && "colored"
-          }`}
-        >
-          <Link to="/messages">
-            <IconButton>
-              <p className="appDetails__count">{messages.length}</p>
-              <div className="appDetails__icon">
-                <p className="appDetails__title">Your Messages</p>
-              </div>
-            </IconButton>
-          </Link>
-        </div>
-        <div
           className={`appDetails__detail ${gifts?.length !== 0 && "colored"}`}
         >
           <Link to="/gifts">
             <IconButton>
-              <p className="appDetails__count">{gifts?.length}</p>
+              {/* <p className="appDetails__count">{gifts?.length}</p> */}
               <div className="appDetails__icon">
-                <p className="appDetails__title">Your Gifts</p>
+                <p className="appDetails__title">Send Your Gift</p>
               </div>
             </IconButton>
           </Link>
         </div>
-        <div
+        {/* <div
           className={`appDetails__detail ${carts?.length !== 0 && "colored"}`}
         >
           <Link to="/checkout">
             <IconButton>
-              <p className="appDetails__count">{carts?.length}</p>
               <div className="appDetails__icon">
-                <p className="appDetails__title">Carts</p>
+                <p className="appDetails__title">Help us Financially</p>
               </div>
             </IconButton>
           </Link>
-        </div>
+        </div> */}
       </animated.div>
     </AppDetailsWrapper>
   );

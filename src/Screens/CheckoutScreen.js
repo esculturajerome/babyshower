@@ -38,36 +38,6 @@ function CheckoutScreen() {
       <div className="checkout">
         <Nav back />
         <AppDetails />
-        <React.Fragment>
-          {carts.length !== 0 ? (
-            <Title title={`P ${getCartTotal(carts)}`} caption="Total Amount" />
-          ) : (
-            <EmptyCart />
-          )}
-          {carts.map((item) => (
-            <React.Fragment>
-              {/* modal */}
-              <PopupModal
-                open={open}
-                onClick={() => handleRemoveFromCart(item.id)}
-                handleClose={handleClose}
-                title="Remove Item?"
-                caption="Are you really sure?"
-                buttonCaption="Delete"
-              />
-              <CartLists
-                handleRemoveFromCart={() => setOpen(true)}
-                lazadaUrl={() => handleLink(item.lazadaUrl)}
-                shopeeUrl={() => handleLink(item.shopeeUrl)}
-                item={item}
-              />
-            </React.Fragment>
-          ))}
-        </React.Fragment>
-
-        {/* <Cards /> */}
-        {/* {checkout && <GradientButton onClick={handle} />} */}
-        {/* {!checkout && <WhiteButton />} */}
       </div>
     </CheckoutWrapper>
   );

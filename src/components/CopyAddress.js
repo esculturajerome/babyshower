@@ -6,12 +6,14 @@ import { IconButton } from "@material-ui/core";
 
 function CopyAddress() {
   const handleCopy = () => {
-    alert("copied");
+    alert(
+      "Copied - Block 34 Lot 26 Santan St. Evergreen Heights Subdivision San Jose Del Monte Bulacan"
+    );
   };
   return (
     <CopyWrapper>
       <div className="copy">
-        <CopyToClipboard text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum.">
+        <CopyToClipboard text="Block 34 Lot 26 Santan St. Evergreen Heights Subdivision San Jose Del Monte Bulacan">
           <IconButton onClick={handleCopy}>
             <p>Copy Address</p>
           </IconButton>

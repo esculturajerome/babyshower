@@ -47,34 +47,28 @@ function Nav({ back }) {
   return (
     <NavWrapper>
       <header className="header">
-        <div className="header__nav">
-          {userInfo && (
+        {back ? (
+          <div className="header__nav2">
             <animated.div className="header__avatar" style={arrow}>
-              {back ? (
-                <Link to="/">
-                  <IconButton>
-                    <ArrowRightAltIcon className="header__back" />
-                  </IconButton>
-                </Link>
-              ) : (
-                <Avatar src={userInfo?.photoUrl} alt={userInfo?.displayName} />
-              )}
+              <Link to="/">
+                <IconButton>
+                  <ArrowRightAltIcon className="header__back" />
+                  <p>Back</p>
+                </IconButton>
+              </Link>
             </animated.div>
-          )}
-          <animated.div className="header__greeting" style={text}>
-            <p className="header__greet">
-              Good {hour < 12 ? "Morning" : hour < 18 ? "Afternoon" : "Evening"}
-              {userInfo && ","}
-            </p>
-            {userInfo ? (
-              <p className="header__name">{userInfo?.displayName}</p>
-            ) : (
-              <IconButton onClick={handleLogin}>
-                <p>Login</p>
-              </IconButton>
-            )}
-          </animated.div>
-        </div>
+          </div>
+        ) : (
+          <div className="header__nav">
+            <animated.div className="header__greeting" style={text}>
+              <p className="header__greet">
+                Welcome to <b>Baby Harry's</b>
+              </p>
+              <h1>After* Baby Shower</h1>
+              <span>Scroll down to continue</span>
+            </animated.div>
+          </div>
+        )}
       </header>
     </NavWrapper>
   );
@@ -82,6 +76,11 @@ function Nav({ back }) {
 
 const NavWrapper = styled.div`
   .header__nav {
+    display: flex;
+    align-items: center;
+    height: 90vh;
+  }
+  .header__nav2 {
     display: flex;
     align-items: center;
   }

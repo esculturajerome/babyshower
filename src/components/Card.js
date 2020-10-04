@@ -7,11 +7,6 @@ function Card({ imageUrl, message }) {
     <CardWrapper>
       <div className="card large">
         {imageUrl && <img className="card__image" src={imageUrl} />}
-        <Avatar
-          className="card__avatar"
-          src="https://lh3.googleusercontent.com/ogw/ADGmqu-yU1CISEmk7nwURVI6aOwT2pH637UjGaQBOlU6=s32-c-mo"
-          alt="j"
-        />
       </div>
     </CardWrapper>
   );

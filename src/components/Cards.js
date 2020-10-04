@@ -6,26 +6,33 @@ import CardGiftcardOutlinedIcon from "@material-ui/icons/CardGiftcardOutlined";
 import { useStateValue } from "../utils/StateProvider";
 import Card from "./Card";
 
-function Cards({ Icon, gifts, messages }) {
+function Cards({ Icon, imageUrl }) {
   const anim = useSpring({
     from: { opacity: 0, marginTop: 50 },
     to: { opacity: 1, marginTop: 25 },
     delay: 300,
   });
 
-  console.log(gifts, "gifts");
+  console.log(imageUrl, "imageUrl");
+
   return (
     <CardsWrapper>
       <animated.div className="cards" style={anim}>
-        <div className="cards__icon">
-          <div>
-            <Icon />
+        {Icon && (
+          <div className="cards__icon">
+            <div>
+              <Icon />
+            </div>
+            <div className="cards__iconLine"></div>
           </div>
-          <div className="cards__iconLine"></div>
-        </div>
+        )}
         <div className="cards__list">
-          {gifts && gifts.map((gift) => <Card imageUrl={gift.imageUrl} />)}
+          <Card imageUrl={imageUrl} />
+          {/* {imageUrl.map(gift => (
+          ))} */}
 
+          {/* <Card imageUrl={require("../images/gcash.png")} />
+            <Card imageUrl={require("../images/bpi.png")} /> */}
           {/* <Card message="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis" /> */}
         </div>
       </animated.div>
@@ -56,6 +63,7 @@ const CardsWrapper = styled.div`
     -ms-overflow-style: none;
     scrollbar-width: none;
     padding: 25px;
+    padding-bottom: 0px;
   }
   .cards__list::-webkit-scrollbar {
     display: none;
