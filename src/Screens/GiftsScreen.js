@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import { useStateValue } from "../utils/StateProvider";
@@ -13,9 +13,9 @@ import AppDetails from "../components/AppDetails";
 import Title from "../components/Title";
 
 function GiftsScreen() {
-  const [{ userInfo, gifts }] = useStateValue();
-
-  console.log(gifts, "gifts");
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <GiftScreenWrapper>
@@ -26,12 +26,8 @@ function GiftsScreen() {
           title="Lorem ipsum dolor sit amet, consectetur adipiscing"
           caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis. Integer lacus libero, elementum id urna ut, euismod gravida arcu. "
         />
-        {gifts && (
-          <React.Fragment>
-            <Cards imageUrl={require("../images/gcash.png")} />
-            <Cards imageUrl={require("../images/bpi.png")} />
-          </React.Fragment>
-        )}
+        <Cards imageUrl={require("../images/gcash.png")} />
+        <Cards imageUrl={require("../images/bpi.png")} />
         <IconText
           Icon={LocalShippingOutlinedIcon}
           text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum."

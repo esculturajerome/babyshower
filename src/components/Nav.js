@@ -61,10 +61,9 @@ function Nav({ back }) {
         ) : (
           <div className="header__nav">
             <animated.div className="header__greeting" style={text}>
-              <p className="header__greet">
-                Welcome to <b>Baby Harry's</b>
-              </p>
-              <h1>After* Baby Shower</h1>
+              <p className="header__greet">Welcome to</p>
+              <h1>Baby Harry's</h1>
+              <h2>After* Baby Shower</h2>
               <span>Scroll down to continue</span>
             </animated.div>
           </div>

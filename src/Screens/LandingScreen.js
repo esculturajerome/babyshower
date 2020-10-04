@@ -36,6 +36,11 @@ function LandingScreen() {
         <Title caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis. Integer lacus libero, elementum id urna ut, euismod gravida arcu. " />
         <Cards
           Icon={CardGiftcardOutlinedIcon}
+          imageUrl={require("../images/babybump.jpg")}
+        />
+        <IconText Icon={EventOutlinedIcon} text="June 4, 8:27 am" />
+        <Cards
+          Icon={CardGiftcardOutlinedIcon}
           imageUrl={require("../images/babyharry.jpg")}
         />
         <IconText Icon={EventOutlinedIcon} text="Baby Harry's first Picture." />
