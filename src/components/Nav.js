@@ -61,10 +61,8 @@ function Nav({ back }) {
         ) : (
           <div className="header__nav">
             <animated.div className="header__greeting" style={text}>
-              <p className="header__greet">Welcome to</p>
-              <h1>Baby Harry's</h1>
-              <h2>After* Baby Shower</h2>
-              <span>Scroll down to continue</span>
+              <p className="header__greet">Meet our</p>
+              <h1>Baby Harry!</h1>
             </animated.div>
           </div>
         )}
@@ -77,7 +75,7 @@ const NavWrapper = styled.div`
   .header__nav {
     display: flex;
     align-items: center;
-    height: 90vh;
+    margin-top: 180px;
   }
   .header__nav2 {
     display: flex;

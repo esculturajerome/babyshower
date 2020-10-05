@@ -6,14 +6,12 @@ import CardGiftcardOutlinedIcon from "@material-ui/icons/CardGiftcardOutlined";
 import { useStateValue } from "../utils/StateProvider";
 import Card from "./Card";
 
-function Cards({ Icon, imageUrl }) {
+function Cards({ Icon, imageUrl, imageUrl1, imageUrl2 }) {
   const anim = useSpring({
     from: { opacity: 0, marginTop: 50 },
     to: { opacity: 1, marginTop: 25 },
     delay: 300,
   });
-
-  console.log(imageUrl, "imageUrl");
 
   return (
     <CardsWrapper>
@@ -27,7 +25,10 @@ function Cards({ Icon, imageUrl }) {
           </div>
         )}
         <div className="cards__list">
-          <Card imageUrl={imageUrl} />
+          {imageUrl && <Card imageUrl={imageUrl} />}
+          {imageUrl1 && <Card imageUrl={imageUrl1} />}
+          {imageUrl2 && <Card imageUrl={imageUrl2} />}
+
           {/* {imageUrl.map(gift => (
           ))} */}
 
@@ -62,8 +63,8 @@ const CardsWrapper = styled.div`
     overflow-x: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    padding: 25px;
-    padding-bottom: 0px;
+    // padding: 25px;
+    // padding-bottom: 0px;
   }
   .cards__list::-webkit-scrollbar {
     display: none;

@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import Nav from "../components/Nav";
 import AppDetails from "../components/AppDetails";
+import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
+import ChildFriendlyOutlinedIcon from "@material-ui/icons/ChildFriendlyOutlined";
 import Cards from "../components/Cards";
 import Title from "../components/Title";
 import GradientButton from "../components/GradientButton";
@@ -24,39 +26,46 @@ function LandingScreen() {
     <LandingWrapper>
       <div className="landing">
         <Nav />
+        <Cards imageUrl={require("../images/babyharry.jpg")} />
+        <IconText
+          Icon={EventOutlinedIcon}
+          text="Harry was born last Saturday, October 3 at 4:00 AM PHT at Bernardino General Hospital. He’s so excited to see the world and only spent 28 weeks inside Mama Gel’s womb."
+        />
         <Title
-          title="Lorem ipsum dolor sit amet, consectetur adipiscing"
-          caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis. Integer lacus libero, elementum id urna ut, euismod gravida arcu. "
+          title="Surprise. Panic. Fear. Love. Joy."
+          caption="We felt mixed emotions that day, but we are very grateful that he was born."
         />
+
+        <Cards imageUrl={require("../images/babybump.jpg")} />
+
+        <Title caption="We were supposed to have a virtual baby shower next month, but since Baby Harry was born earlier than his due date (December 19), we decided to create this website instead." />
+
+        <Title title="Here's a quick update about him:" />
+
+        <Cards imageUrl={require("../images/babyharry.jpg")} />
+
+        <Title caption="Since he was born prematurely, he still has to stay in the hospital, in an incubator, for at least six weeks. We can't wait to take him home but for now, he has to stay there." />
+
+        <IconText
+          Icon={ChildFriendlyOutlinedIcon}
+          text="We hope when everything goes back to normal and safe, we’d love to introduce Harry personally to everyone."
+        />
+
+        <Title
+          title="Something For Baby Harry..."
+          caption="If you desire to give him gifts, we would appreciate monetary gifts for Baby Harry’s hospital bills."
+        />
+        <GradientButton
+          Icon={FavoriteBorderOutlinedIcon}
+          caption="Here's are your options:"
+        />
+
         <Cards
-          Icon={CardGiftcardOutlinedIcon}
-          imageUrl={require("../images/pt.jpg")}
+          imageUrl={require("../images/gcash.png")}
+          imageUrl1={require("../images/bpi.png")}
+          imageUrl2={require("../images/gcash.png")}
         />
-        <IconText Icon={EventOutlinedIcon} text="May 16, 9:15 am" />
-        <Title caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rutrum, odio in posuere efficitur, ipsum ipsum pharetra sem, eget feugiat velit lectus ac turpis. Integer lacus libero, elementum id urna ut, euismod gravida arcu. " />
-        <Cards
-          Icon={CardGiftcardOutlinedIcon}
-          imageUrl={require("../images/babybump.jpg")}
-        />
-        <IconText Icon={EventOutlinedIcon} text="June 4, 8:27 am" />
-        <Cards
-          Icon={CardGiftcardOutlinedIcon}
-          imageUrl={require("../images/babyharry.jpg")}
-        />
-        <IconText Icon={EventOutlinedIcon} text="Baby Harry's first Picture." />
-        {/* <GradientButton
-          Icon={MessageOutlinedIcon}
-          title="Send us a message"
-          caption="Any tips and hacks as a parents"
-        />
-        */}
-        <Link to="/gifts">
-          <GradientButton
-            Icon={CardGiftcardOutlinedIcon}
-            title="Send us a Gift"
-            caption="This will be a big help for Baby Harry's Hospital Fees"
-          />
-        </Link>
+
         {/* <AppDetails /> */}
       </div>
     </LandingWrapper>

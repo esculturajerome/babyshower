@@ -23,7 +23,7 @@ function GradientButton({ Icon, title, caption, onClick }) {
           <div className="gradientButton__content">
             <p className="gradientButton__text">
               {title}
-              <ArrowRightAltIcon />
+              {/* <ArrowRightAltIcon /> */}
             </p>
             <p className="gradientButton__caption">{caption}</p>
           </div>
@@ -59,7 +59,7 @@ const GradientButtonWrapper = styled.div`
   }
   .gradientButton__text {
     color: #fff;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-weight: 800;
     letter-spacing: -0.3px;
   }

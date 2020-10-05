@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Avatar } from "@material-ui/core";
 
-function Card({ imageUrl, message }) {
+function Card({ imageUrl }) {
   return (
     <CardWrapper>
       <div className="card large">
@@ -13,12 +12,12 @@ function Card({ imageUrl, message }) {
 }
 
 const CardWrapper = styled.div`
-  .card {
-    transition: transform 0.45s;
-  }
-  .card:hover {
-    transform: scale(1.05);
-  }
+  // .card {
+  //   transition: transform 0.45s;
+  // }
+  // .card:hover {
+  //   transform: scale(1.05);
+  // }
   .card__avatar {
     margin-top: -70px;
     margin-left: 150px;

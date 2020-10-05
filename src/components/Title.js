@@ -4,8 +4,8 @@ import { useSpring, animated } from "react-spring";
 
 function Title({ title, caption }) {
   const textAnim = useSpring({
-    from: { opacity: 0, marginTop: 50 },
-    to: { opacity: 1, marginTop: 25 },
+    from: { opacity: 0, marginTop: 100 },
+    to: { opacity: 1, marginTop: 50 },
     delay: 300,
   });
   return (
@@ -20,13 +20,14 @@ function Title({ title, caption }) {
 
 const TitleWrapper = styled.div`
   .title {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
   }
   .title__text {
-    font-size: 1rem;
+    font-size: 2rem;
     color: var(--primaryColor);
     text-transform: uppercase;
     margin-bottom: 0.5rem;
+    padding-right: 15px;
   }
   .title__caption {
     margin-right: 25px;
