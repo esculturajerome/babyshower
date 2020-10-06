@@ -73,6 +73,13 @@ function LandingScreen() {
           imageUrl6={require("../images/bpi.png")}
           imageUrl7={require("../images/aub.png")}
         />
+        <Title
+          title="Our deepest gratitude"
+          caption="All the support received from you will be spent solely on Harry's expenses."
+        />
+        <Title title="Thank you so much for all the love!" />
+        <Title caption="Sincerely," />
+        <Title caption="Jerome, Gel, and Baby Harry" />
 
         {/* <AppDetails /> */}
       </div>
