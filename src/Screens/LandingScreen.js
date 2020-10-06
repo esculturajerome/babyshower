@@ -5,6 +5,7 @@ import Nav from "../components/Nav";
 import AppDetails from "../components/AppDetails";
 import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
 import ChildFriendlyOutlinedIcon from "@material-ui/icons/ChildFriendlyOutlined";
+import ChildCareOutlinedIcon from "@material-ui/icons/ChildCareOutlined";
 import Cards from "../components/Cards";
 import Title from "../components/Title";
 import GradientButton from "../components/GradientButton";
@@ -19,6 +20,8 @@ import { useStateValue } from "../utils/StateProvider";
 import IconText from "../components/IconText";
 import CopyAddress from "../components/CopyAddress";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
+import ArrowRightAltOutlinedIcon from "@material-ui/icons/ArrowRightAltOutlined";
 
 function LandingScreen() {
   const [{ userInfo, gifts }] = useStateValue();
@@ -47,23 +50,26 @@ function LandingScreen() {
         <Title caption="Since he was born prematurely, he still has to stay in the hospital, in an incubator, for at least six weeks. We can't wait to take him home but for now, he has to stay there." />
 
         <IconText
-          Icon={ChildFriendlyOutlinedIcon}
+          Icon={ChildCareOutlinedIcon}
           text="We hope when everything goes back to normal and safe, we’d love to introduce Harry personally to everyone."
         />
 
         <Title
           title="Something For Baby Harry..."
-          caption="If you desire to give him gifts, we would appreciate monetary gifts for Baby Harry’s hospital bills."
+          caption="We appreciate your love, support, and prayers but if you desire to give him anything, we would appreciate monetary gifts for Baby Harry’s hospital bills."
         />
         <GradientButton
           Icon={FavoriteBorderOutlinedIcon}
-          caption="Here's are your options:"
+          caption="Here are your options:"
         />
 
         <Cards
-          imageUrl={require("../images/gcash.png")}
-          imageUrl1={require("../images/bpi.png")}
-          imageUrl2={require("../images/gcash.png")}
+          // imageUrl={require("../images/bankarrow.png")}
+          imageUrl1={require("../images/gcash.png")}
+          imageUrl2={require("../images/coins.png")}
+          imageUrl3={require("../images/landbank.png")}
+          imageUrl4={require("../images/bpi.png")}
+          imageUrl5={require("../images/aub.png")}
         />
 
         {/* <AppDetails /> */}

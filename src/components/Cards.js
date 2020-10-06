@@ -6,7 +6,16 @@ import CardGiftcardOutlinedIcon from "@material-ui/icons/CardGiftcardOutlined";
 import { useStateValue } from "../utils/StateProvider";
 import Card from "./Card";
 
-function Cards({ Icon, imageUrl, imageUrl1, imageUrl2 }) {
+function Cards({
+  Icon,
+  imageUrl,
+  imageUrl1,
+  imageUrl2,
+  imageUrl3,
+  imageUrl4,
+  imageUrl5,
+  imageUrl6,
+}) {
   const anim = useSpring({
     from: { opacity: 0, marginTop: 50 },
     to: { opacity: 1, marginTop: 25 },
@@ -28,6 +37,10 @@ function Cards({ Icon, imageUrl, imageUrl1, imageUrl2 }) {
           {imageUrl && <Card imageUrl={imageUrl} />}
           {imageUrl1 && <Card imageUrl={imageUrl1} />}
           {imageUrl2 && <Card imageUrl={imageUrl2} />}
+          {imageUrl3 && <Card imageUrl={imageUrl3} />}
+          {imageUrl4 && <Card imageUrl={imageUrl4} />}
+          {imageUrl5 && <Card imageUrl={imageUrl5} />}
+          {imageUrl6 && <Card imageUrl={imageUrl6} />}
 
           {/* {imageUrl.map(gift => (
           ))} */}
