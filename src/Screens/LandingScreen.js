@@ -36,7 +36,7 @@ function LandingScreen() {
         />
         <IconText
           Icon={CameraAltOutlinedIcon}
-          text="This is a stolen shot. Taking pictures and videos are prohibited in nursery."
+          text="This is a stolen shot. Taking pictures and videos are prohibited in the nursery."
         />
         <Title
           title="Surprise. Panic. Fear. Love. Joy."
