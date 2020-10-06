@@ -75,7 +75,7 @@ function LandingScreen() {
         <Cards
           // imageUrl={require("../images/bankarrow.png")}
           imageUrl1={require("../images/gcash.png")}
-          imageUrl2={require("../images/paymaya.png")}
+          // imageUrl2={require("../images/paymaya.png")}
           imageUrl3={require("../images/coins.png")}
           imageUrl4={require("../images/landbank.png")}
           imageUrl5={require("../images/paynow.png")}
