@@ -21,7 +21,7 @@ import IconText from "../components/IconText";
 import CopyAddress from "../components/CopyAddress";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
-import ArrowRightAltOutlinedIcon from "@material-ui/icons/ArrowRightAltOutlined";
+import CameraAltOutlinedIcon from "@material-ui/icons/CameraAltOutlined";
 
 function LandingScreen() {
   const [{ userInfo, gifts }] = useStateValue();
@@ -34,6 +34,10 @@ function LandingScreen() {
           Icon={EventOutlinedIcon}
           text="Harry was born last Saturday, October 3 at 4:00 AM PHT at Bernardino General Hospital. He’s so excited to see the world and only spent 28 weeks inside Mama Gel’s womb."
         />
+        <IconText
+          Icon={CameraAltOutlinedIcon}
+          text="This is a stolen shot. Taking pictures and videos are prohibited in nursery."
+        />
         <Title
           title="Surprise. Panic. Fear. Love. Joy."
           caption="We felt mixed emotions that day, but we are very grateful that he was born."
@@ -45,7 +49,7 @@ function LandingScreen() {
 
         <Title title="Here's a quick update about him:" />
 
-        <Cards imageUrl={require("../images/babyharry.jpg")} />
+        <Cards imageUrl={require("../images/nursery.jpg")} />
 
         <Title caption="Since he was born prematurely, he still has to stay in the hospital, in an incubator, for at least six weeks. We can't wait to take him home but for now, he has to stay there." />
 
