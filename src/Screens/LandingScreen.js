@@ -48,7 +48,7 @@ function LandingScreen() {
           caption="We felt mixed emotions that day, but we are very grateful that he was born."
         />
 
-        <Cards imageUrl={require("../images/babybump.jpg")} />
+        <Cards imageUrl={require("../images/gelandi.jpg")} />
 
         <Title caption="We were supposed to have a virtual baby shower next month, but since Baby Harry was born earlier than his due date (December 19), we decided to create this website instead." />
 
