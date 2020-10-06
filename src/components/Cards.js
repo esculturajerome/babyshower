@@ -87,8 +87,11 @@ const CardsWrapper = styled.div`
     // padding: 25px;
     // padding-bottom: 0px;
   }
-  .cards__list::-webkit-scrollbar {
-    display: none;
+
+  @media only screen and (max-width: 600px) {
+    .cards__list::-webkit-scrollbar {
+      display: none;
+    }
   }
   .cards__iconLine {
     background: #e4ebf0;
