@@ -29,7 +29,12 @@ function LandingScreen() {
     <LandingWrapper>
       <div className="landing">
         <Nav />
-        <Cards imageUrl={require("../images/babyharry.jpg")} />
+        <Cards
+          imageUrl3={require("../images/babyharry.jpg")}
+          imageUrl={require("../images/babyharry1.jpg")}
+          imageUrl1={require("../images/babyharry2.jpg")}
+          imageUrl2={require("../images/babyharry3.jpg")}
+        />
         <IconText
           Icon={EventOutlinedIcon}
           text="Harry was born last Saturday, October 3 at 4:00 AM PHT at Bernardino General Hospital. He’s so excited to see the world and only spent 28 weeks inside Mama Gel’s womb."
