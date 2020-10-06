@@ -60,7 +60,7 @@ function LandingScreen() {
 
         <Title
           title="Something For Baby Harry..."
-          caption="We appreciate your love, support, and prayers but if you desire to give him anything, we would appreciate monetary gifts for Baby Harry’s hospital bills."
+          caption="We are grateful for your love, support, and prayers but if you desire to give him anything, we would appreciate monetary gifts for Baby Harry’s hospital bills."
         />
         <GradientButton
           Icon={FavoriteBorderOutlinedIcon}
@@ -75,7 +75,8 @@ function LandingScreen() {
           imageUrl4={require("../images/landbank.png")}
           imageUrl5={require("../images/sb.png")}
           imageUrl6={require("../images/bpi.png")}
-          imageUrl7={require("../images/aub.png")}
+          imageUrl7={require("../images/paypal.png")}
+          imageUrl8={require("../images/aub.png")}
         />
         <Title
           title="Our deepest gratitude"
