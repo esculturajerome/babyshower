@@ -73,10 +73,12 @@ function LandingScreen() {
           imageUrl2={require("../images/paymaya.png")}
           imageUrl3={require("../images/coins.png")}
           imageUrl4={require("../images/landbank.png")}
-          imageUrl5={require("../images/sb.png")}
-          imageUrl6={require("../images/bpi.png")}
-          imageUrl7={require("../images/paypal.png")}
-          imageUrl8={require("../images/aub.png")}
+          imageUrl5={require("../images/paynow.png")}
+          imageUrl6={require("../images/posb.png")}
+          imageUrl7={require("../images/sb.png")}
+          imageUrl8={require("../images/bpi.png")}
+          imageUrl9={require("../images/paypal.png")}
+          imageUrl10={require("../images/aub.png")}
         />
         <Title
           title="Our deepest gratitude"

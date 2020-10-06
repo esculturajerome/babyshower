@@ -17,6 +17,8 @@ function Cards({
   imageUrl6,
   imageUrl7,
   imageUrl8,
+  imageUrl9,
+  imageUrl10,
 }) {
   const anim = useSpring({
     from: { opacity: 0, marginTop: 50 },
@@ -45,6 +47,8 @@ function Cards({
           {imageUrl6 && <Card imageUrl={imageUrl6} />}
           {imageUrl7 && <Card imageUrl={imageUrl7} />}
           {imageUrl8 && <Card imageUrl={imageUrl8} />}
+          {imageUrl9 && <Card imageUrl={imageUrl9} />}
+          {imageUrl10 && <Card imageUrl={imageUrl10} />}
 
           {/* {imageUrl.map(gift => (
           ))} */}
