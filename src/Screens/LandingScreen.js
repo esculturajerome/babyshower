@@ -29,7 +29,7 @@ function LandingScreen() {
     <LandingWrapper>
       <div className="landing">
         {/* <Nav /> */}
-        <p className="add-title">It is with our deepest sorrow that we inform you of the death of Baby Harry Gray Escultura. He passed away today at 1 in the morning.
+        <p className="add-title">It is with our deepest sorrow that we inform you of the death of Baby Harry Gray Escultura. He passed away last October 15, 2020 at 1 in the morning.
         <br/><br/>
         To all our family and friends, from the bottom of our hearts, thank you for all of your financial and moral support. We appreciate all the love and support you have given and will continually give to us.
         <br/><br/>
