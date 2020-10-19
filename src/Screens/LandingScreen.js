@@ -28,7 +28,15 @@ function LandingScreen() {
   return (
     <LandingWrapper>
       <div className="landing">
-        <Nav />
+        {/* <Nav /> */}
+        <p className="add-title">It is with our deepest sorrow that we inform you of the death of Baby Harry Gray Escultura. He passed away today at 1 in the morning.
+        <br/><br/>
+        To all our family and friends, from the bottom of our hearts, thank you for all of your financial and moral support. We appreciate all the love and support you have given and will continually give to us.
+        <br/><br/>
+        You’ve inspired our family to also share and extend love and support to those who are in need.
+        <br/><br/>
+        Thank you very much.
+        </p>
         <Cards
           imageUrl3={require("../images/babyharry.jpg")}
           imageUrl={require("../images/babyharry1.jpg")}
@@ -102,6 +110,12 @@ function LandingScreen() {
 const LandingWrapper = styled.div`
   .landing {
     margin: 75px 0 75px 35px;
+  }
+  .add-title {
+    height: 80vh;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
   }
 `;
 
