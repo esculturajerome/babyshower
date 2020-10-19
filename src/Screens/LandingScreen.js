@@ -37,7 +37,7 @@ function LandingScreen() {
         <br/><br/>
         Thank you very much.
         </p>
-        <Cards
+        {/* <Cards
           imageUrl3={require("../images/babyharry.jpg")}
           imageUrl={require("../images/babyharry1.jpg")}
           imageUrl1={require("../images/babyharry2.jpg")}
@@ -99,7 +99,8 @@ function LandingScreen() {
         />
         <Title title="Thank you so much for all the love!" />
         <Title caption="Sincerely," />
-        <Title caption="Jerome, Gel, and Baby Harry" />
+        <Title caption="Jerome, Gel, and Baby Harry" /> */}
+        <Title caption="Jerome and Gel" />
 
         {/* <AppDetails /> */}
       </div>
@@ -109,7 +110,8 @@ function LandingScreen() {
 
 const LandingWrapper = styled.div`
   .landing {
-    margin: 75px 0 75px 35px;
+    // margin: 75px 0 75px 35px;
+    margin-left: 35px;
   }
   .add-title {
     height: 80vh;
