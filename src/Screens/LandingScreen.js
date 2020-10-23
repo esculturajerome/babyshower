@@ -69,12 +69,14 @@ function LandingScreen() {
         <IconText
           Icon={ChildCareOutlinedIcon}
           text="We hope when everything goes back to normal and safe, we’d love to introduce Harry personally to everyone."
-        />
+        />*/}
 
-        <Title
+        {/* <Title
           title="Something For Baby Harry..."
           caption="We are grateful for your love, support, and prayers but if you desire to give him anything, we would appreciate monetary gifts for Baby Harry’s hospital bills."
-        />
+        /> */}
+        <Title caption="Sincerely," />
+        <Title caption="Jerome and Gel" />
         <GradientButton
           Icon={FavoriteBorderOutlinedIcon}
           caption="Here are your options:"
@@ -93,14 +95,13 @@ function LandingScreen() {
           imageUrl9={require("../images/paypal.png")}
           imageUrl10={require("../images/aub.png")}
         />
-        <Title
+        {/* <Title
           title="Our deepest gratitude"
           caption="All the support received from you will be spent solely on Harry's expenses."
-        />
-        <Title title="Thank you so much for all the love!" />
-        <Title caption="Sincerely," />
-        <Title caption="Jerome, Gel, and Baby Harry" /> */}
-        <Title caption="Jerome and Gel" />
+        /> */}
+        {/* <Title title="Thank you so much for all the love!" /> */}
+        {/* <Title caption="Jerome, Gel, and Baby Harry" />  */}
+        
 
         {/* <AppDetails /> */}
       </div>
